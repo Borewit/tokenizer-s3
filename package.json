@@ -1,0 +1,53 @@
+{
+  "name": "@tokenizer/s3",
+  "version": "0.1.0",
+  "description": "Amazon S3 tokenizer",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
+  ],
+  "scripts": {
+    "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts coverage",
+    "mocha": "mocha",
+    "test": "npm run lint && npm run mocha",
+    "compile-lib": "tsc -p lib/tsconfig.json",
+    "compile": "npm run compile-lib",
+    "build": "npm run clean && yarn run compile",
+    "eslint": "eslint lib --ext .ts --ignore-pattern *.d.ts",
+    "lint": "npm run eslint"
+  },
+  "keywords": [
+    "audio",
+    "S3",
+    "AWS",
+    "chunk",
+    "range",
+    "Amazon",
+    "cloud"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borewit/tokenizer-s3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Borewit/tokenizer-s3/issues"
+  },
+  "dependencies": {
+    "@tokenizer/range": "^0.2.1",
+    "strtok3": "^5.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "aws-sdk": "^2.528.0",
+    "chai": "^4.2.0",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
+    "mocha": "^6.2.2",
+    "typescript": "^3.6.4"
+  }
+}
