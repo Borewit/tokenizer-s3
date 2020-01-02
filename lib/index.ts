@@ -12,8 +12,10 @@ export interface IS3Options {
 
 /**
  * Initialize tokenizer from S3 object
+ * @param s3 S3 client
  * @param objRequest S3 object request
  * @param options music-metadata options
+ * @return Tokenizer
  */
 export async function makeTokenizer(s3: S3, objRequest: S3.Types.GetObjectRequest, options?: IS3Options): Promise<strtok3.ITokenizer> {
   const s3request = new S3Request(s3, objRequest);
