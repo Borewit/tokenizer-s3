@@ -1,5 +1,5 @@
 import * as S3 from 'aws-sdk/clients/s3';
-import { tokenizer } from '@tokenizer/range';
+import { parseContentRange, tokenizer } from '@tokenizer/range';
 import * as strtok3 from 'strtok3/lib/core';
 import { S3Request } from './s3-request';
 
@@ -16,14 +16,18 @@ export interface IS3Options {
  * @param options music-metadata options
  */
 export async function makeTokenizer(s3: S3, objRequest: S3.Types.GetObjectRequest, options?: IS3Options): Promise<strtok3.ITokenizer> {
+  const s3request = new S3Request(s3, objRequest);
   if (options && options.disableChunked) {
-    const info = await this.getRangedRequest(objRequest, [0, 0]).promise();
+    const info = await s3request.getRangedRequest( [0, 0]).promise();
+    const contentRange = parseContentRange(info.ContentRange);
     const stream = s3
       .getObject(objRequest)
       .createReadStream();
-    return strtok3.fromStream(stream, info);
+    return strtok3.fromStream(stream, {
+      mimeType: info.ContentType,
+      size: contentRange.instanceLength
+    });
   } else {
-    const s3request = new S3Request(s3, objRequest);
     return tokenizer(s3request, {
       avoidHeadRequests: true
     });

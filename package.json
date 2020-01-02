@@ -9,11 +9,12 @@
     "lib/**/*.d.ts"
   ],
   "scripts": {
-    "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts coverage",
-    "mocha": "mocha",
+    "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts test/**/*.js test/**/*.js.map coverage",
+    "mocha": "mocha --require ts-node/register --require source-map-support/register --full-trace test/test.ts",
     "test": "npm run lint && npm run mocha",
     "compile-lib": "tsc -p lib/tsconfig.json",
-    "compile": "npm run compile-lib",
+    "compile-test": "tsc -p test",
+    "compile": "npm run compile-lib && npm run compile-test",
     "build": "npm run clean && yarn run compile",
     "eslint": "eslint lib --ext .ts --ignore-pattern *.d.ts",
     "lint": "npm run eslint"
@@ -41,6 +42,7 @@
     "strtok3": "^5.0.0"
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.7",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "aws-sdk": "^2.528.0",
@@ -48,6 +50,7 @@
     "del-cli": "^3.0.0",
     "eslint": "^6.8.0",
     "mocha": "^6.2.2",
+    "ts-node": "^8.5.4",
     "typescript": "^3.6.4"
   }
 }

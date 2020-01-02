@@ -12,7 +12,7 @@ export class S3Request implements IRangeRequestClient {
 
   public async getResponse(method, range: number[]): Promise<IRangeRequestResponse> {
 
-    const response = await this.getRangedRequest(this.objRequest, range).promise();
+    const response = await this.getRangedRequest(range).promise();
 
     const contentRange = parseContentRange(response.ContentRange);
 
@@ -27,12 +27,12 @@ export class S3Request implements IRangeRequestClient {
   }
 
   /**
-   * Do a ranged request, this method will be called by streaming-http-token-reader
-   * @param objRequest
-   * @param range
+   * Do a ranged request
+   * @param objRequest S3 object request
+   * @param range Range request
    */
-  private getRangedRequest(objRequest: S3.Types.GetObjectRequest, range: number[]): Request<S3.Types.GetObjectOutput, AWSError> {
-    const rangedRequest = {...objRequest}; // Copy request
+  public getRangedRequest(range: number[]): Request<S3.Types.GetObjectOutput, AWSError> {
+    const rangedRequest = {...this.objRequest}; // Copy request
     rangedRequest.Range = `bytes=${range[0]}-${range[1]}`;
     return this.s3.getObject(rangedRequest);
   }
