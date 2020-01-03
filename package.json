@@ -28,7 +28,10 @@
     "Amazon",
     "cloud"
   ],
-  "author": "",
+  "author": {
+    "name": "Borewit",
+    "url": "https://github.com/Borewit"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
