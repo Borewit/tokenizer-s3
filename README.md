@@ -42,3 +42,6 @@ async function parseS3Object(s3, objRequest, options) {
 ```
 An module implementation of this example can be found in [@music-metadata/s3](https://github.com/Borewit/music-metadata-s3).
 
+## Dependency graph
+
+![dependency graph](https://i.imgur.com/gD0xTvx.png)
