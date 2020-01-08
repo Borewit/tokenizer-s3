@@ -102,15 +102,6 @@
     regexpp "^3.0.0"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@2.14.0":
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.14.0.tgz#e9179fa3c44e00b3106b85d7b69342901fb43e3b"
-  integrity sha512-KcyKS7G6IWnIgl3ZpyxyBCxhkBPV+0a5Jjy2g5HxlrbG2ZLQNFeneIBVXdaBCYOVjvGmGGFKom1kgiAY75SDeQ==
-  dependencies:
-    "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/typescript-estree" "2.14.0"
-    eslint-scope "^5.0.0"
-
 "@typescript-eslint/experimental-utils@2.15.0":
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.15.0.tgz#41e35313bfaef91650ddb5380846d1c78a780070"
@@ -129,19 +120,6 @@
     "@typescript-eslint/experimental-utils" "2.15.0"
     "@typescript-eslint/typescript-estree" "2.15.0"
     eslint-visitor-keys "^1.1.0"
-
-"@typescript-eslint/typescript-estree@2.14.0":
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-2.14.0.tgz#c67698acdc14547f095eeefe908958d93e1a648d"
-  integrity sha512-pnLpUcMNG7GfFFfNQbEX6f1aPa5fMnH2G9By+A1yovYI4VIOK2DzkaRuUlIkbagpAcrxQHLqovI1YWqEcXyRnA==
-  dependencies:
-    debug "^4.1.1"
-    eslint-visitor-keys "^1.1.0"
-    glob "^7.1.6"
-    is-glob "^4.0.1"
-    lodash.unescape "4.0.1"
-    semver "^6.3.0"
-    tsutils "^3.17.1"
 
 "@typescript-eslint/typescript-estree@2.15.0":
   version "2.15.0"
@@ -264,9 +242,9 @@ astral-regex@^1.0.0:
   integrity sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==
 
 aws-sdk@^2.528.0:
-  version "2.598.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.598.0.tgz#b0682aba835448468573279560a5d1b9ed312a56"
-  integrity sha512-Ve4Tah/1RNwxD/gavpwKLpV44CEOe3K8lrW+pYn5/z/ZGlFfNmlCtEI3SHhabg70zxZaWvt3DU5odAqo7axccg==
+  version "2.599.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.599.0.tgz#45705cbf95a34b6b7f455c3b43c9c7a8c37297e4"
+  integrity sha512-7yTXnV5SC9W6m+STbziPd1ZNVh9fTtEZ7Mm0rMqEDm/B2fJBa5xd45TwWG8JvS40X5+9jUBykiWdCuVBBx82rg==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
