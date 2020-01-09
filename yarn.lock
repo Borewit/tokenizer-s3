@@ -40,9 +40,9 @@
     fastq "^1.6.0"
 
 "@tokenizer/range@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.2.1.tgz#f50605c2b42936f296d8fd32569fee5c79ee6bbf"
-  integrity sha512-guIiNyR/VXFtYbpMbfQj8zVdbwu5MoRjh2YE/NwFeJJwkBOPBw5FhoHmJ7IAv4btHlFeBGtRDiLuuZtYkr12AA==
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.2.2.tgz#c7698af4ae6ca2efb8b06d88f60555fa99256b97"
+  integrity sha512-yzJ7oRzs1kMnpDaBFptCiLZL0AJakLr2q2+EoRVZY3Csg9QKPuN5FRlHfpeipHo0tAp5d3OvJG7s+/bXP2Ntzw==
   dependencies:
     debug "^4.1.1"
     strtok3 "^5.0.0"
