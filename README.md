@@ -44,4 +44,4 @@ An module implementation of this example can be found in [@music-metadata/s3](ht
 
 ## Dependency graph
 
-![dependency graph](https://i.imgur.com/gD0xTvx.png)
+![dependency graph](doc/dependency.svg)

@@ -1,0 +1,97 @@
+<svg width="100%" viewBox="0 0 608 129" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 124.4)">
+
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-124.4 603.0169,-124.4 603.0169,4 -4,4"></polygon>
+<text text-anchor="middle" x="299.5085" y="-102" font-family="Roboto Condensed, sans-serif" font-size="16.00" fill="#000000">@tokenizer/s3</text>
+<!-- @tokenizer/s3@0.1.2 -->
+<g id="node1" class="node module-_tokenizer_s3 maintainer-borewit license-mit">
+
+<path fill="none" stroke="#000000" d="M95.5611,-74.3011C95.5611,-74.3011 6.4579,-74.3011 6.4579,-74.3011 3.2242,-74.3011 -.0095,-71.0674 -.0095,-67.8337 -.0095,-67.8337 -.0095,-61.3663 -.0095,-61.3663 -.0095,-58.1326 3.2242,-54.8989 6.4579,-54.8989 6.4579,-54.8989 95.5611,-54.8989 95.5611,-54.8989 98.7948,-54.8989 102.0285,-58.1326 102.0285,-61.3663 102.0285,-61.3663 102.0285,-67.8337 102.0285,-67.8337 102.0285,-71.0674 98.7948,-74.3011 95.5611,-74.3011"></path>
+<text text-anchor="middle" x="51.0095" y="-61.3" font-family="Roboto Condensed, sans-serif" font-size="9.00" fill="#000000">@tokenizer/s3@0.1.2</text>
+</g>
+<!-- @tokenizer/range@0.2.2 -->
+<g id="node2" class="node module-_tokenizer_range maintainer-borewit license-mit">
+
+<path fill="none" stroke="#000000" d="M248.0553,-93.3011C248.0553,-93.3011 144.6515,-93.3011 144.6515,-93.3011 141.4178,-93.3011 138.1841,-90.0674 138.1841,-86.8337 138.1841,-86.8337 138.1841,-80.3663 138.1841,-80.3663 138.1841,-77.1326 141.4178,-73.8989 144.6515,-73.8989 144.6515,-73.8989 248.0553,-73.8989 248.0553,-73.8989 251.289,-73.8989 254.5227,-77.1326 254.5227,-80.3663 254.5227,-80.3663 254.5227,-86.8337 254.5227,-86.8337 254.5227,-90.0674 251.289,-93.3011 248.0553,-93.3011"></path>
+<text text-anchor="middle" x="196.3534" y="-80.3" font-family="Roboto Condensed, sans-serif" font-size="9.00" fill="#000000">@tokenizer/range@0.2.2</text>
+</g>
+<!-- @tokenizer/s3@0.1.2&#45;&gt;@tokenizer/range@0.2.2 -->
+<g id="edge1" class="edge">
+
+<path fill="none" stroke="#000000" d="M102.2523,-71.2987C110.5938,-72.3891 119.349,-73.5336 128.0214,-74.6673"></path>
+<polygon fill="#000000" stroke="#000000" points="127.7651,-78.1635 138.1344,-75.9894 128.6725,-71.2226 127.7651,-78.1635"></polygon>
+</g>
+<!-- strtok3@5.0.1 -->
+<g id="node3" class="node module-strtok3 maintainer-borewit license-mit">
+
+<path fill="none" stroke="#000000" d="M352.7464,-55.3011C352.7464,-55.3011 297.3127,-55.3011 297.3127,-55.3011 294.079,-55.3011 290.8453,-52.0674 290.8453,-48.8337 290.8453,-48.8337 290.8453,-42.3663 290.8453,-42.3663 290.8453,-39.1326 294.079,-35.8989 297.3127,-35.8989 297.3127,-35.8989 352.7464,-35.8989 352.7464,-35.8989 355.9801,-35.8989 359.2138,-39.1326 359.2138,-42.3663 359.2138,-42.3663 359.2138,-48.8337 359.2138,-48.8337 359.2138,-52.0674 355.9801,-55.3011 352.7464,-55.3011" style=""></path>
+<text text-anchor="middle" x="325.0295" y="-42.3" font-family="Roboto Condensed, sans-serif" font-size="9.00" fill="#000000">strtok3@5.0.1</text>
+</g>
+<!-- @tokenizer/s3@0.1.2&#45;&gt;strtok3@5.0.1 -->
+<g id="edge2" class="edge">
+
+<path fill="none" stroke="#000000" d="M102.2291,-61.0485C153.4612,-57.4962 231.4725,-52.0871 280.2889,-48.7022"></path>
+<polygon fill="#000000" stroke="#000000" points="280.8071,-52.1748 290.541,-47.9914 280.3228,-45.1916 280.8071,-52.1748"></polygon>
+</g>
+<!-- @tokenizer/range@0.2.2&#45;&gt;strtok3@5.0.1 -->
+<g id="edge3" class="edge">
+
+<path fill="none" stroke="#000000" d="M229.1568,-73.9127C245.3402,-69.1335 265.0602,-63.3099 282.3979,-58.1898"></path>
+<polygon fill="#000000" stroke="#000000" points="283.6868,-61.4586 292.2861,-55.2696 281.7042,-54.7452 283.6868,-61.4586"></polygon>
+</g>
+<!-- debug@4.1.1 -->
+<g id="node4" class="node module-debug maintainer-qix maintainer-thebigredgeek maintainer-tjholowaychuk maintainer-tootallnate license-mit">
+
+<path fill="none" stroke="#000000" d="M479.7572,-93.3011C479.7572,-93.3011 427.6663,-93.3011 427.6663,-93.3011 424.4326,-93.3011 421.1989,-90.0674 421.1989,-86.8337 421.1989,-86.8337 421.1989,-80.3663 421.1989,-80.3663 421.1989,-77.1326 424.4326,-73.8989 427.6663,-73.8989 427.6663,-73.8989 479.7572,-73.8989 479.7572,-73.8989 482.9909,-73.8989 486.2246,-77.1326 486.2246,-80.3663 486.2246,-80.3663 486.2246,-86.8337 486.2246,-86.8337 486.2246,-90.0674 482.9909,-93.3011 479.7572,-93.3011" style=""></path>
+<text text-anchor="middle" x="453.7117" y="-80.3" font-family="Roboto Condensed, sans-serif" font-size="9.00" fill="#000000">debug@4.1.1</text>
+</g>
+<!-- @tokenizer/range@0.2.2&#45;&gt;debug@4.1.1 -->
+<g id="edge4" class="edge">
+
+<path fill="none" stroke="#000000" d="M254.752,-83.6C302.2935,-83.6 368.2975,-83.6 411.008,-83.6"></path>
+<polygon fill="#000000" stroke="#000000" points="411.0743,-87.1001 421.0743,-83.6 411.0743,-80.1001 411.0743,-87.1001"></polygon>
+</g>
+<!-- strtok3@5.0.1&#45;&gt;debug@4.1.1 -->
+<g id="edge7" class="edge">
+
+<path fill="none" stroke="#000000" d="M357.8345,-55.2873C374.0186,-60.0665 393.7395,-65.8901 411.0781,-71.0102"></path>
+<polygon fill="#000000" stroke="#000000" points="410.3849,-74.4549 420.9667,-73.9304 412.3674,-67.7415 410.3849,-74.4549"></polygon>
+</g>
+<!-- peek&#45;readable@3.1.0 -->
+<g id="node5" class="node module-peek_readable maintainer-borewit license-mit">
+
+<path fill="none" stroke="#000000" d="M497.0526,-56.3011C497.0526,-56.3011 410.3709,-56.3011 410.3709,-56.3011 407.1372,-56.3011 403.9036,-53.0674 403.9036,-49.8337 403.9036,-49.8337 403.9036,-43.3663 403.9036,-43.3663 403.9036,-40.1326 407.1372,-36.8989 410.3709,-36.8989 410.3709,-36.8989 497.0526,-36.8989 497.0526,-36.8989 500.2863,-36.8989 503.5199,-40.1326 503.5199,-43.3663 503.5199,-43.3663 503.5199,-49.8337 503.5199,-49.8337 503.5199,-53.0674 500.2863,-56.3011 497.0526,-56.3011" style=""></path>
+<text text-anchor="middle" x="453.7117" y="-43.3" font-family="Roboto Condensed, sans-serif" font-size="9.00" fill="#000000">peek-readable@3.1.0</text>
+</g>
+<!-- strtok3@5.0.1&#45;&gt;peek&#45;readable@3.1.0 -->
+<g id="edge5" class="edge">
+
+<path fill="none" stroke="#000000" d="M359.514,-45.868C369.9937,-45.9494 381.8312,-46.0414 393.4877,-46.132"></path>
+<polygon fill="#000000" stroke="#000000" points="393.6192,-49.633 403.6461,-46.2109 393.6736,-42.6332 393.6192,-49.633"></polygon>
+</g>
+<!-- @tokenizer/token@0.1.0 -->
+<g id="node6" class="node module-_tokenizer_token maintainer-borewit license-unspecified">
+
+<path fill="none" stroke="#000000" d="M505.4257,-19.3011C505.4257,-19.3011 401.9978,-19.3011 401.9978,-19.3011 398.7641,-19.3011 395.5304,-16.0674 395.5304,-12.8337 395.5304,-12.8337 395.5304,-6.3663 395.5304,-6.3663 395.5304,-3.1326 398.7641,.1011 401.9978,.1011 401.9978,.1011 505.4257,.1011 505.4257,.1011 508.6594,.1011 511.8931,-3.1326 511.8931,-6.3663 511.8931,-6.3663 511.8931,-12.8337 511.8931,-12.8337 511.8931,-16.0674 508.6594,-19.3011 505.4257,-19.3011"></path>
+<text text-anchor="middle" x="453.7117" y="-6.3" font-family="Roboto Condensed, sans-serif" font-size="9.00" fill="#000000">@tokenizer/token@0.1.0</text>
+</g>
+<!-- strtok3@5.0.1&#45;&gt;@tokenizer/token@0.1.0 -->
+<g id="edge6" class="edge">
+
+<path fill="none" stroke="#000000" d="M359.514,-35.9527C374.8037,-31.6752 392.9837,-26.5892 409.2751,-22.0315"></path>
+<polygon fill="#000000" stroke="#000000" points="410.4448,-25.3388 419.1321,-19.274 408.5589,-18.5976 410.4448,-25.3388"></polygon>
+</g>
+<!-- ms@2.1.2 -->
+<g id="node7" class="node module-ms maintainer-alexaltea maintainer-anatrajkovska maintainer-andybitz maintainer-arunoda maintainer-arzafran maintainer-atcastle maintainer-b3nnyl maintainer-caarlos0 maintainer-codetheory maintainer-coetry maintainer-dav_is maintainer-fivepointseven maintainer-guybedford maintainer-hharnisc maintainer-huvik maintainer-iamevilrabbit maintainer-igorklopov maintainer-ijjk maintainer-janicklas_ralph maintainer-javivelasco maintainer-joecohens maintainer-juancampa maintainer-leo maintainer-lfades maintainer-lucleray maintainer-manovotny maintainer-marcosnils maintainer-matheuss maintainer-mfix22 maintainer-mglagola maintainer-msweeneydev maintainer-nkzawa maintainer-olliv maintainer-paco maintainer-paulogdm maintainer-quietshu maintainer-rabaut maintainer-ragojose maintainer-rauchg maintainer-sarupbanskota maintainer-skllcrn maintainer-sophearak maintainer-styfle maintainer-timer maintainer-timneutkens maintainer-tootallnate maintainer-umegaya maintainer-williamli maintainer-zeit_bot license-mit">
+
+<path fill="none" stroke="#000000" d="M592.5319,-93.3011C592.5319,-93.3011 554.5372,-93.3011 554.5372,-93.3011 551.3035,-93.3011 548.0698,-90.0674 548.0698,-86.8337 548.0698,-86.8337 548.0698,-80.3663 548.0698,-80.3663 548.0698,-77.1326 551.3035,-73.8989 554.5372,-73.8989 554.5372,-73.8989 592.5319,-73.8989 592.5319,-73.8989 595.7656,-73.8989 598.9993,-77.1326 598.9993,-80.3663 598.9993,-80.3663 598.9993,-86.8337 598.9993,-86.8337 598.9993,-90.0674 595.7656,-93.3011 592.5319,-93.3011" style=""></path>
+<text text-anchor="middle" x="573.5346" y="-80.3" font-family="Roboto Condensed, sans-serif" font-size="9.00" fill="#000000">ms@2.1.2</text>
+</g>
+<!-- debug@4.1.1&#45;&gt;ms@2.1.2 -->
+<g id="edge8" class="edge">
+
+<path fill="none" stroke="#000000" d="M486.4539,-83.6C502.3693,-83.6 521.5301,-83.6 537.8214,-83.6"></path>
+<polygon fill="#000000" stroke="#000000" points="538.0499,-87.1001 548.0499,-83.6 538.0499,-80.1001 538.0499,-87.1001"></polygon>
+</g>
+</g>
+</svg>
