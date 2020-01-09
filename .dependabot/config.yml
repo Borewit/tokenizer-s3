@@ -28,3 +28,7 @@ update_configs:
           dependency_name: "coveralls"
       - match:
           dependency_name: "nyc"
+      - match:
+          dependency_name: "@tokenizer/range"
+      - match:
+          dependency_name: "strtok3"
