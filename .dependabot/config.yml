@@ -32,3 +32,9 @@ update_configs:
           dependency_name: "@tokenizer/range"
       - match:
           dependency_name: "strtok3"
+      - match:
+          dependency_name: "karma-jasmine"
+      - match:
+          dependency_name: "music-metadata"
+      - match:
+          dependency_name: "karma-firefox-launcher"
