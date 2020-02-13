@@ -13,6 +13,34 @@ Specialized [_tokenizer_](https://github.com/Borewit/strtok3#tokenizer) to acces
 npm install @tokenizer/s3
 ```
 
+## Determine S3 file type
+
+Determine file type (based on it's content) from a file stored Amazon S3 cloud:
+```js
+const FileType = require('file-type');
+const S3 = require('aws-sdk/clients/s3');
+const { makeTokenizer } = require('@tokenizer/s3');
+
+(async () => {
+
+  // Initialize S3 client
+  const s3 = new S3();
+
+  // Initialize  S3 tokenizer
+  const s3Tokenizer = await makeTokenizer(s3, {
+    Bucket: 'affectlab',
+    Key: '1min_35sec.mp4'
+  });
+
+  // Figure out what kind of file it is
+  const fileType = await FileType.fromTokenizer(s3Tokenizer);
+  console.log(fileType);
+})();
+```
+
+See also [example at file-type](https://github.com/sindresorhus/file-type#filetypefromtokenizertokenizer).
+
+
 ## Reading audio metadata from Amazon S3 
 
 Retrieve music-metadata 
@@ -40,6 +68,7 @@ async function parseS3Object(s3, objRequest, options) {
     );
 })();
 ```
+
 An module implementation of this example can be found in [@music-metadata/s3](https://github.com/Borewit/music-metadata-s3).
 
 ## Dependency graph
