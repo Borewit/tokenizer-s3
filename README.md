@@ -9,8 +9,15 @@
 Specialized [_tokenizer_](https://github.com/Borewit/strtok3#tokenizer) to access files stored on the  [Amazon Web Services (AWS) S3 cloud storage](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html).
 
 ## Installation
+
+Install using [npm](https://www.npmjs.com/get-npm):
 ```shell script
 npm install @tokenizer/s3
+```
+
+or using [yarn](https://yarnpkg.com/):
+```shell script
+yarn add install @tokenizer/s3
 ```
 
 ## Examples
