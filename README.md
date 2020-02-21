@@ -13,7 +13,9 @@ Specialized [_tokenizer_](https://github.com/Borewit/strtok3#tokenizer) to acces
 npm install @tokenizer/s3
 ```
 
-## Determine S3 file type
+## Examples
+
+### Determine S3 file type
 
 Determine file type (based on it's content) from a file stored Amazon S3 cloud:
 ```js
@@ -40,8 +42,7 @@ const { makeTokenizer } = require('@tokenizer/s3');
 
 See also [example at file-type](https://github.com/sindresorhus/file-type#filetypefromtokenizertokenizer).
 
-
-## Reading audio metadata from Amazon S3 
+### Reading audio metadata from Amazon S3 
 
 Retrieve music-metadata 
 ```js
