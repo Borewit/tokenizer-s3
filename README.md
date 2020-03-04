@@ -54,7 +54,9 @@ See also [example at file-type](https://github.com/sindresorhus/file-type#filety
 Retrieve music-metadata 
 ```js
 const s3tokenizer = require("@tokenizer/s3");
+const S3 = require('aws-sdk/clients/s3');
 const mm = require("music-metadata/lib/core");
+
 /**
  * Retrieve metadata from Amazon S3 object
  * @param objRequest S3 object request
@@ -62,18 +64,20 @@ const mm = require("music-metadata/lib/core");
  * @return Metadata
  */
 async function parseS3Object(s3, objRequest, options) {
-    const s3Tokenizer = await  s3tokenizer.makeTokenizer(s3, objRequest, options);
-    return mm.parseFromTokenizer(s3Tokenizer, options);
+  const s3Tokenizer = await  s3tokenizer.makeTokenizer(s3, objRequest, options);
+  return mm.parseFromTokenizer(s3Tokenizer, options);
 }
 
 (async () => {
   const s3 = new S3();
-  
-  const metadata = await mmS3client.parseS3Object({
-        Bucket: 'music-metadata',
-        Key: 'Various Artists - 2008 - netBloc Vol 13 (color in a world of monochrome) {BSCOMP0013} [MP3-V0]/01 - Nils Hoffmann - Sweet Man Like Me.mp3'
-      }
-    );
+
+  const metadata = await parseS3Object(s3, {
+    Bucket: 'standing0media',
+    Key: '01 Where The Highway Takes Me.mp3'
+    }
+  );
+
+  console.log(metadata);
 })();
 ```
 
