@@ -12,12 +12,12 @@ Specialized [_tokenizer_](https://github.com/Borewit/strtok3#tokenizer) to acces
 
 Install using [npm](https://www.npmjs.com/get-npm):
 ```shell script
-npm install @tokenizer/s3
+npm install @tokenizer/s3 @aws-sdk/client-s3
 ```
 
 or using [yarn](https://yarnpkg.com/):
 ```shell script
-yarn add install @tokenizer/s3
+yarn add install @tokenizer/s3 @aws-sdk/client-s3
 ```
 
 ## Examples

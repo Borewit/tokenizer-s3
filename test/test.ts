@@ -1,11 +1,11 @@
-import * as S3 from 'aws-sdk/clients/s3';
+import { S3Client } from '@aws-sdk/client-s3';
 import { assert } from 'chai';
 import { makeTokenizer } from '../lib';
 
 describe('S3 Tokenizer', function() {
 
   this.timeout(20000);
-  const s3 = new S3();
+  const s3 = new S3Client({});
 
   describe('initialize tokenizer.fileInfo', () => {
 
