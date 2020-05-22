@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^7.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
     "@typescript-eslint/parser": "^2.14.0",
     "aws-sdk": "^2.528.0",
     "chai": "^4.2.0",
