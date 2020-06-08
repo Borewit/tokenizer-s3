@@ -1854,9 +1854,9 @@ strip-json-comments@^3.1.0:
   integrity sha512-e6/d0eBu7gHtdCqFt0xJr642LdToM5/cN4Qb9DbHjVx1CP5RyeM+zH7pbecEmDv/lBqb0QH+6Uqq75rxFPkM0w==
 
 strtok3@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.0.0.tgz#d6b900863daeacfe6c1724c6e7bb36d7a58e83c8"
-  integrity sha512-ZXlmE22LZnIBvEU3n/kZGdh770fYFie65u5+2hLK9s74DoFtpkQIdBZVeYEzlolpGa+52G5IkzjUWn+iXynOEQ==
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.0.1.tgz#dc3c24430451587a0b6bc209ce5cb858c61376e7"
+  integrity sha512-dmBTylowukrX+XSofIFGbWitdYFIHNWhKpNCukNtQJWjbl+IjwRJvSTIjA7ePa+NZqXQvL82d+tzNgU9WFkDuA==
   dependencies:
     "@tokenizer/token" "^0.1.1"
     "@types/debug" "^4.1.5"
