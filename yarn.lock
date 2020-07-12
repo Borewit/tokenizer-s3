@@ -40,12 +40,12 @@
     fastq "^1.6.0"
 
 "@tokenizer/range@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.3.0.tgz#d44c2ff1e453c8b50d0c020873353197fe059757"
-  integrity sha512-faZqalupzRzzRWhTAWLWuBqWkN5j83WeO3xSMBnpR76WYTb+j/ExqLks2n1QFVTkiZKDXBhjqCMPudfWdYwByQ==
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.3.1.tgz#e331eaad1f2b0925caaa32aaf0404ded3a3c4412"
+  integrity sha512-ayiZH03p4ZP+6fFyD7px/A+cRZBKNn9qyzcu362qPcsr4iKEWHMGOUVUr6S8ffoFq4uJTzrRZSh+vH8Mgx9PJA==
   dependencies:
     debug "^4.1.1"
-    strtok3 "^6.0.0"
+    strtok3 "^6.0.3"
 
 "@tokenizer/token@^0.1.1":
   version "0.1.1"
@@ -1855,7 +1855,7 @@ strip-json-comments@^3.1.0:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.0.tgz#7638d31422129ecf4457440009fba03f9f9ac180"
   integrity sha512-e6/d0eBu7gHtdCqFt0xJr642LdToM5/cN4Qb9DbHjVx1CP5RyeM+zH7pbecEmDv/lBqb0QH+6Uqq75rxFPkM0w==
 
-strtok3@^6.0.0:
+strtok3@^6.0.0, strtok3@^6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.0.3.tgz#bc81e225c19a909eab86538ff3348c4b3b0553d3"
   integrity sha512-/3RaYN9rW5WEYNHSvn081CgL4HziT027hfi5tsksbPfeWxi3BSLb8tolZDzpYU3I78/0ZqRiFpMDAqN2t4YShA==
