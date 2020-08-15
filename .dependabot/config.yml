@@ -40,3 +40,5 @@ update_configs:
           dependency_name: "music-metadata"
       - match:
           dependency_name: "karma-firefox-launcher"
+      - match:
+          dependency_name: "del-cli"
