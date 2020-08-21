@@ -39,10 +39,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@tokenizer/range@^0.3.0":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.3.2.tgz#ace9847855ac07bbdeb800764650f81a6e1b5cac"
-  integrity sha512-K57/1pw7q/inrdhY1NtoUHt3d9EL+qVfyFszidAcLT36SGapndQwr7YLmfmQmJKVbhqieAiMngCNYOu4PTPQxw==
+"@tokenizer/range@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.4.0.tgz#5b7d7e10761118a98ecbb015e1a2e133b25d4fbe"
+  integrity sha512-MMZcla3fnx8NJmTbMfBjqjxaoepcQ/YyWPxq0Av1vbfAoN5DrT02tvJLzCXB62LmmLg+AmRR6FZPjGQHExlTFw==
   dependencies:
     debug "^4.1.1"
     strtok3 "^6.0.4"
