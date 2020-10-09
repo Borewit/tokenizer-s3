@@ -354,9 +354,9 @@ astral-regex@^1.0.0:
   integrity sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==
 
 aws-sdk@^2.528.0:
-  version "2.769.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.769.0.tgz#492e94e28c5e6aa5378c09e61d33e3263f329b6d"
-  integrity sha512-FZZrxgchLE0VXrd/uhIw2Tmlf82xOYuPK6batUUYz7UoAOL7q1UYUdI8ISNfeCEoN2MuMWAgfTIQiLx/9+NiEw==
+  version "2.770.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.770.0.tgz#eb0567cbed215db31d43d846843f52359bab0e16"
+  integrity sha512-CUkyXwFxEJ32AxH2tjBFfG4grjFdyDjyBaltYzaLa0U2KvGgDIj28q8psdxhALTm3c9zPEoMYpRXiTyRNmkROQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
