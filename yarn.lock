@@ -56,9 +56,9 @@
     fastq "^1.6.0"
 
 "@tokenizer/range@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.4.0.tgz#5b7d7e10761118a98ecbb015e1a2e133b25d4fbe"
-  integrity sha512-MMZcla3fnx8NJmTbMfBjqjxaoepcQ/YyWPxq0Av1vbfAoN5DrT02tvJLzCXB62LmmLg+AmRR6FZPjGQHExlTFw==
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.4.1.tgz#bbb8bf1addd999459cc3305e5c195a5f35e28d6e"
+  integrity sha512-GOfl0wtGJIIg1OqxOO3P2BAZqDhuxMDviIAi7dy3nHC629css5Rk77LXL6ljyY6yRI+KWBYlJOcb0lPj99tbZQ==
   dependencies:
     debug "^4.1.1"
     strtok3 "^6.0.4"
