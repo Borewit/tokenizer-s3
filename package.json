@@ -32,6 +32,10 @@
     "name": "Borewit",
     "url": "https://github.com/Borewit"
   },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Borewit"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
