@@ -81,11 +81,6 @@
     debug "^4.1.1"
     strtok3 "^6.0.4"
 
-"@tokenizer/token@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@tokenizer/token/-/token-0.1.1.tgz#f0d92c12f87079ddfd1b29f614758b9696bc29e3"
-  integrity sha512-XO6INPbZCxdprl+9qa/AAbFFOMzzwqYxpjPgLICrMD6C2FCw6qfJOPcBk6JqqPLSaZ/Qx87qn4rpPmPMwaAK6w==
-
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -1443,10 +1438,10 @@ pathval@^1.1.1:
   resolved "https://registry.yarnpkg.com/pathval/-/pathval-1.1.1.tgz#8534e77a77ce7ac5a2512ea21e0fdb8fcf6c3d8d"
   integrity sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==
 
-peek-readable@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/peek-readable/-/peek-readable-3.1.4.tgz#f5c3b41a4eeb63a1322c4131f0b5bac7105b892e"
-  integrity sha512-DX7ec7frSMtCWw+zMd27f66hcxIz/w9LQTY2RflB4WNHCVPAye1pJiP2t3gvaaOhu7IOhtPbHw8MemMj+F5lrg==
+peek-readable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/peek-readable/-/peek-readable-4.0.0.tgz#b024ef391c86136eba0ae9df3ff4f966a09e9a7e"
+  integrity sha512-kLbU4cz6h86poGVBKgAVMpFmD47nX04fPPQNKnv9fuj+IJZYkEBjsYAVu5nDbZWx0ZsWwWlMzeG90zQa5KLBaA==
 
 picomatch@^2.0.4:
   version "2.2.1"
@@ -1722,12 +1717,11 @@ strip-json-comments@3.1.1, strip-json-comments@^3.1.0, strip-json-comments@^3.1.
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
 strtok3@^6.0.0, strtok3@^6.0.4:
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.1.3.tgz#488fe8ca91664cf93432c94752ba9e5c785bd9dd"
-  integrity sha512-ssWSKFOeUTurMSucgyUf+a6Z9mVTYrsYiyEK5RLnh8BM6sFrKSljVlnjZXIDxMguYfdQI+mUPFHo88FYTxq1XA==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.2.1.tgz#13544a93d1620eb7c0ca700eea85b565e252400f"
+  integrity sha512-KVEUjM/+GSNxSS1xRlxCkBOTljK9IIwjLOmIjgBsTYFW5xt3QHxVYLsqFXqvwH1iXROcnDuv+Z1JH/Sm60HTVg==
   dependencies:
-    "@tokenizer/token" "^0.1.1"
-    peek-readable "^3.1.4"
+    peek-readable "^4.0.0"
 
 supports-color@8.1.1:
   version "8.1.1"
