@@ -1717,9 +1717,9 @@ strip-json-comments@3.1.1, strip-json-comments@^3.1.0, strip-json-comments@^3.1.
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
 strtok3@^6.0.0, strtok3@^6.0.4:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.2.1.tgz#13544a93d1620eb7c0ca700eea85b565e252400f"
-  integrity sha512-KVEUjM/+GSNxSS1xRlxCkBOTljK9IIwjLOmIjgBsTYFW5xt3QHxVYLsqFXqvwH1iXROcnDuv+Z1JH/Sm60HTVg==
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.2.2.tgz#aad1da5fc28bf10d603c367c2a7f9f47a6c1d2d9"
+  integrity sha512-iUzLl3UhF2RfqQah80JngnfltQFLEidGyTX8+hHFMQFjzUj3UpIpOx824FtFmRI9bwyywReENpdHGDkFJwJlGQ==
   dependencies:
     peek-readable "^4.0.0"
 
