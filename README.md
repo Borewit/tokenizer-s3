@@ -27,13 +27,13 @@ yarn add install @tokenizer/s3 @aws-sdk/client-s3
 Determine file type (based on it's content) from a file stored Amazon S3 cloud:
 ```js
 const FileType = require('file-type');
-const S3 = require('aws-sdk/clients/s3');
+const { S3Client } = require('@aws-sdk/client-s3');
 const { makeTokenizer } = require('@tokenizer/s3');
 
 (async () => {
 
   // Initialize S3 client
-  const s3 = new S3();
+  const s3 = new S3Client({});
 
   // Initialize  S3 tokenizer
   const s3Tokenizer = await makeTokenizer(s3, {
@@ -54,7 +54,7 @@ See also [example at file-type](https://github.com/sindresorhus/file-type#filety
 Retrieve music-metadata 
 ```js
 const s3tokenizer = require("@tokenizer/s3");
-const S3 = require('aws-sdk/clients/s3');
+const { S3Client } = require('@aws-sdk/client-s3');
 const mm = require("music-metadata/lib/core");
 
 /**
@@ -69,7 +69,7 @@ async function parseS3Object(s3, objRequest, options) {
 }
 
 (async () => {
-  const s3 = new S3();
+  const s3 = new S3Client({});
 
   const metadata = await parseS3Object(s3, {
     Bucket: 'standing0media',
