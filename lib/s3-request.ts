@@ -1,5 +1,5 @@
 import { IRangeRequestClient, IRangeRequestResponse, parseContentRange } from '@tokenizer/range';
-import { S3Client, GetObjectRequest, GetObjectOutput, GetObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, GetObjectRequest, GetObjectCommand } from '@aws-sdk/client-s3';
 import { Readable } from 'stream';
 
 /**
