@@ -9,14 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: AWS
 
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
 
-      - name: Test AWS Credentials
+      - name: Configure AWS OIDC Session
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
+          role-to-assume: arn:aws:iam::970661486861:role/github-actions-role
+          role-session-name: GithubActionS3
 
       - uses: actions/checkout@v2
 
