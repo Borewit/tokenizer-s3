@@ -64,12 +64,12 @@ jobs:
 
     steps:
 
-      - name: Configure AWS Credentials
+      - name: Configure AWS OIDC Session
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
+          role-to-assume: arn:aws:iam::970661486861:role/github-actions-role
+          role-session-name: GithubActionS3
 
       - name: 'Checkout the repository'
         uses: actions/checkout@v2
