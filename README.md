@@ -20,6 +20,8 @@ or using [yarn](https://yarnpkg.com/):
 yarn add install @tokenizer/s3 @aws-sdk/client-s3
 ```
 
+To configure AWS client authentication see [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
 ## Examples
 
 ### Determine S3 file type
