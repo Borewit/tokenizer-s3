@@ -63,7 +63,7 @@
     "@typescript-eslint/parser": "^3.0.0",
     "aws-sdk": "^2.528.0",
     "chai": "^4.2.0",
-    "del-cli": "^4.0.0",
+    "del-cli": "^5.0.0",
     "eslint": "^7.0.0",
     "mocha": "^9.0.0",
     "ts-node": "^10.9.1",
