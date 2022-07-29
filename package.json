@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@tokenizer/range": "^0.5.1",
-    "strtok3": "6.2.2"
+    "strtok3": "6.3.0"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.22.0",
