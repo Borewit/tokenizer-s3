@@ -982,12 +982,12 @@
     fastq "^1.6.0"
 
 "@tokenizer/range@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.5.1.tgz#953e18d7b714f0629dfc600097a9ab95d991470c"
-  integrity sha512-yXASo+mUC/NO954ZaVXmv+pD3wUUoq9P3lQ4MQ8JfYxmivSFXte1TbHDqqsW7seWxqiPttA+0LaZKmFP+1jYjA==
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@tokenizer/range/-/range-0.5.3.tgz#f1ed3d589e4ed1314e69ca9d44d0738307367c2b"
+  integrity sha512-EcPMjCrLL4xaxZtdmN4E+78fSML2R1seiuCKmaIe4pjm7JEDVn8bUejuTMCGpPiqz1SkTgd90xj6c7aIrsHy+A==
   dependencies:
     debug "^4.3.2"
-    strtok3 "^6.2.2"
+    strtok3 "^6.3.0"
 
 "@tokenizer/token@^0.3.0":
   version "0.3.0"
@@ -1504,17 +1504,10 @@ cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-debug@4.3.3:
+debug@4.3.3, debug@^4.0.1, debug@^4.1.1, debug@^4.3.2:
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
   integrity sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
-  dependencies:
-    ms "2.1.2"
-
-debug@^4.0.1, debug@^4.1.1, debug@^4.3.2:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
-  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
   dependencies:
     ms "2.1.2"
 
@@ -3017,7 +3010,7 @@ strip-json-comments@3.1.1, strip-json-comments@^3.1.0, strip-json-comments@^3.1.
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-strtok3@6.3.0, strtok3@^6.2.2:
+strtok3@6.3.0, strtok3@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.3.0.tgz#358b80ffe6d5d5620e19a073aa78ce947a90f9a0"
   integrity sha512-fZtbhtvI9I48xDSywd/somNqgUHl2L2cstmXCCif0itOf96jeW18MBSyrLuNicYQVkvpOxkZtkzujiTJ9LW5Jw==
