@@ -7,6 +7,6 @@ updates:
     time: "04:00"
   open-pull-requests-limit: 10
   ignore:
-  - dependency-name: aws-sdk
+  - dependency-name: strtok3
     versions:
-    - 2.889.0
+    - "7.x" # Pure ESM module
