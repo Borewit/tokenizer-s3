@@ -10,3 +10,6 @@ updates:
   - dependency-name: strtok3
     versions:
     - "7.x" # Pure ESM module
+  - dependency-name: mocha
+    versions:
+      - "10.x"
