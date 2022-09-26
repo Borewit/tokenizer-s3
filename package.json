@@ -61,7 +61,7 @@
     "@types/node": "^18.7.16",
     "@typescript-eslint/eslint-plugin": "^4.0.0",
     "@typescript-eslint/parser": "^3.0.0",
-    "aws-sdk": "^2.1212.0",
+    "aws-sdk": "^2.1223.0",
     "chai": "^4.2.0",
     "del-cli": "^5.0.0",
     "eslint": "^7.0.0",
