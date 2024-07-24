@@ -27,13 +27,17 @@ To configure AWS client authentication see [Configuration and credential file se
 Determine file type (based on it's content) from a file stored Amazon S3 cloud:
 ```js
 const FileType = require('file-type');
-const { S3Client } = require('@aws-sdk/client-s3');
+import { fromEnv } from '@aws-sdk/credential-providers';
+import { S3Client } from '@aws-sdk/client-s3';
 const { makeTokenizer } = require('@tokenizer/s3');
 
 (async () => {
 
   // Initialize S3 client
-  const s3 = new S3Client({});
+  const s3 = new S3Client({
+    region: 'eu-west-2',
+    credentials: fromEnv(),
+  });
 
   // Initialize  S3 tokenizer
   const s3Tokenizer = await makeTokenizer(s3, {
