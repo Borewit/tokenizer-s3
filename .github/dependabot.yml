@@ -1,21 +1,12 @@
 version: 2
 updates:
 
-  # CommonJS (CJS)
   - package-ecosystem: npm
     directory: "/"
     schedule:
       interval: weekly
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 15
     labels:
       - dependencies
-      - CJS
     target-branch: master
     versioning-strategy: increase
-    ignore:
-      - dependency-name: strtok3
-        versions:
-          - "7.x" # Pure ESM module
-      - dependency-name: mocha
-        versions:
-          - "10.x"
