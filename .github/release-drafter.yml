@@ -4,17 +4,28 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
-  - title: ':rocket: Enhancements'
+  - title: ⚠️ API Changes
     labels:
-      - 'enhancement'
-  - title: ':bug: Bug Fixes'
+      - API change
+  - title: 🚀 Enhancements
     labels:
-      - 'bug'
-  - title: ':arrow_up: Dependencies'
+      - enhancement
+  - title: 🎨 Improvements
     labels:
-      - 'dependencies'
+      - improvement
+  - title: 🐛 Bug Fixes
+    labels:
+      - bug
+  - title: 🔧 Under the hood
+    labels:
+      - debt
+      - dev-dependencies
+  - title: ⬆️ Dependencies
+    labels:
+      - dependencies
 exclude-labels:
-  - 'DevOps'
+  - DevOps
+  - dev-dependencies
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 version-resolver:
@@ -33,5 +44,5 @@ template: |
 
   $CHANGES
 
-  ## NPM release
-  NPM release: [$REPOSITORY@$RESOLVED_VERSION](https://www.npmjs.com/package/@tokenizer/s3/v/$RESOLVED_VERSION)
+  ## 📦 NPM release
+  NPM release: [@tokenizer/s3@$RESOLVED_VERSION](https://www.npmjs.com/package/@tokenizer/s3/v/$RESOLVED_VERSION)
