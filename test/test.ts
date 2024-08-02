@@ -1,4 +1,4 @@
-import { fromEnv } from '@aws-sdk/credential-providers';
+import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 import { S3Client } from '@aws-sdk/client-s3';
 import { assert } from 'chai';
 import { makeTokenizer } from '../lib/index.js';
@@ -8,7 +8,7 @@ describe('S3 Tokenizer', function() {
   this.timeout(20000);
   const s3 = new S3Client({
     region: 'eu-west-2',
-    credentials: fromEnv(),
+    credentials: fromNodeProviderChain(),
   });
 
   describe('initialize tokenizer.fileInfo', () => {
