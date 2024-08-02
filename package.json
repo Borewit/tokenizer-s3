@@ -64,7 +64,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.0",
     "@typescript-eslint/parser": "^3.0.0",
     "chai": "^5.1.1",
-    "del-cli": "^5.0.0",
+    "del-cli": "^5.1.0",
     "eslint": "^7.0.0",
     "file-type": "^19.4.0",
     "mocha": "^10.7.0",
