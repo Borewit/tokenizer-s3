@@ -1,3 +1,4 @@
+# Project:
 node_modules/
 lib/**/*.js
 lib/**/*.js.map
@@ -5,7 +6,18 @@ lib/**/*.d.ts
 test/**/*.js
 test/**/*.js.map
 test/**/*.d.ts
-.idea/
-*.iml
 coverage/
 .nyc_output/
+
+# Intellij IDEA:
+.idea/
+*.iml
+
+# Yarn Berry:
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

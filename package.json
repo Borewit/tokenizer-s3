@@ -10,15 +10,15 @@
     "lib/**/*.d.ts"
   ],
   "scripts": {
-    "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts test/**/*.js test/**/*.js.map coverage",
+    "clean": "del-cli 'lib/**/*.js' 'lib/**/*.js.map' 'lib/**/*.d.ts' 'test/**/*.js' 'test/**/*.js.map' 'coverage'",
     "mocha": "mocha",
-    "test": "npm run lint && npm run mocha",
+    "test": "yarn run lint && yarn run mocha",
     "compile-lib": "tsc -p lib/tsconfig.json",
     "compile-test": "tsc -p test",
-    "compile": "npm run compile-lib && npm run compile-test",
-    "build": "npm run clean && yarn run compile",
-    "eslint": "eslint lib --ext .ts --ignore-pattern *.d.ts",
-    "lint": "npm run eslint"
+    "compile": "yarn run compile-lib && yarn run compile-test",
+    "build": "yarn run clean && yarn run compile",
+    "eslint": "eslint lib --ext .ts --ignore-pattern '*.d.ts'",
+    "lint": "yarn run eslint"
   },
   "keywords": [
     "audio",
