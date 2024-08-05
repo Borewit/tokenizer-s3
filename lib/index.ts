@@ -1,8 +1,8 @@
-import { S3Client, GetObjectRequest, GetObjectCommand } from '@aws-sdk/client-s3';
+import { type S3Client, type GetObjectRequest, GetObjectCommand } from '@aws-sdk/client-s3';
 import { parseContentRange, tokenizer } from '@tokenizer/range';
 import { fromStream, type ITokenizer } from 'strtok3';
 import { S3Request } from './s3-request.js';
-import { Readable } from 'stream';
+import type { Readable } from 'node:stream';
 
 export interface IS3Options {
   /**
@@ -20,7 +20,7 @@ export interface IS3Options {
  */
 export async function makeTokenizer(s3: S3Client, objRequest: GetObjectRequest, options?: IS3Options): Promise<ITokenizer> {
   const s3request = new S3Request(s3, objRequest);
-  if (options && options.disableChunked) {
+  if (options?.disableChunked) {
     const info = await s3request.getRangedRequest([0, 0]);
     const contentRange = parseContentRange(info.ContentRange);
     const output = await s3.send(new GetObjectCommand(objRequest));
@@ -30,9 +30,8 @@ export async function makeTokenizer(s3: S3Client, objRequest: GetObjectRequest, 
         size: contentRange.instanceLength
       }
     });
-  } else {
+  }
     return tokenizer(s3request, {
       avoidHeadRequests: true
     });
-  }
 }

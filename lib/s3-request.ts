@@ -1,6 +1,6 @@
 import { type IRangeRequestClient, type IRangeRequestResponse, parseContentRange } from '@tokenizer/range';
-import { S3Client, GetObjectRequest, GetObjectCommand, type GetObjectCommandOutput } from '@aws-sdk/client-s3';
-import { Readable } from 'stream';
+import { type S3Client, type GetObjectRequest, GetObjectCommand, type GetObjectCommandOutput } from '@aws-sdk/client-s3';
+import { Readable } from 'node:stream';
 
 /**
  * Use S3-client to execute actual HTTP-requests.
@@ -33,9 +33,8 @@ export class S3Request implements IRangeRequestClient {
         buffers.push(chunk);
       }
       return S3Request.mergeUint8Arrays(...buffers);
-    } else {
-      throw new Error('body expected to be an instance of Readable ');
     }
+      throw new Error('body expected to be an instance of Readable ');
   }
 
   public async getResponse(method, range: number[]): Promise<IRangeRequestResponse> {
