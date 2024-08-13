@@ -2,6 +2,8 @@ import { type IRangeRequestClient, type IRangeRequestResponse, parseContentRange
 import { type S3Client, type GetObjectRequest, GetObjectCommand, type GetObjectCommandOutput } from '@aws-sdk/client-s3';
 import { Readable } from 'node:stream';
 
+type ByteRangeRequest = [number, number];
+
 /**
  * Use S3-client to execute actual HTTP-requests.
  */
@@ -37,13 +39,10 @@ export class S3Request implements IRangeRequestClient {
       throw new Error('body expected to be an instance of Readable ');
   }
 
-  public async getResponse(method, range: number[]): Promise<IRangeRequestResponse> {
+  public async getResponse(method: string | undefined, range: ByteRangeRequest): Promise<IRangeRequestResponse> {
 
     const response: GetObjectCommandOutput = await this.getRangedRequest(range);
-
-    const { Body: body, ContentType: mimeType } = response;
-
-    const contentRange = parseContentRange(response.ContentRange);
+    const contentRange = parseContentRange(response.ContentRange as string);
 
     return {
       size: contentRange?.instanceLength,
@@ -56,10 +55,9 @@ export class S3Request implements IRangeRequestClient {
 
   /**
    * Do a ranged request
-   * @param objRequest S3 object request
    * @param range Range request
    */
-  public getRangedRequest(range: number[]) {
+  public getRangedRequest(range: ByteRangeRequest) {
     const rangedRequest: GetObjectRequest = {
       ...this.objRequest,
       Range: `bytes=${range[0]}-${range[1]}`,

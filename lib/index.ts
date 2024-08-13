@@ -22,7 +22,7 @@ export async function makeTokenizer(s3: S3Client, objRequest: GetObjectRequest, 
   const s3request = new S3Request(s3, objRequest);
   if (options?.disableChunked) {
     const info = await s3request.getRangedRequest([0, 0]);
-    const contentRange = parseContentRange(info.ContentRange);
+    const contentRange = parseContentRange(info.ContentRange as string);
     const output = await s3.send(new GetObjectCommand(objRequest));
     return fromStream(output.Body as Readable, {
       fileInfo: {
