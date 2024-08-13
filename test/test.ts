@@ -1,7 +1,14 @@
 import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 import { S3Client } from '@aws-sdk/client-s3';
 import { assert } from 'chai';
-import { makeTokenizer } from '../lib/index.js';
+import { type IS3Options, makeTokenizer } from '../lib/index.js';
+import { fileTypeFromTokenizer, type FileTypeResult } from 'file-type';
+
+const fileKeys = {
+  sweetManLineMe: 'Various Artists - 2008 - netBloc Vol 13 (color in a world of monochrome) {BSCOMP0013} [MP3-V0]/01 - Nils Hoffmann - Sweet Man Like Me.mp3',
+  secretGarden: 'movies/lg-uhd-secret-garden.mkv',
+  hisenseTibet: 'movies/hisense-tibet-uhd.mkv'
+}
 
 describe('S3 Tokenizer', function() {
 
@@ -17,7 +24,7 @@ describe('S3 Tokenizer', function() {
 
       const tokenizer = await makeTokenizer(s3, {
         Bucket: 'music-metadata',
-        Key: 'Various Artists - 2008 - netBloc Vol 13 (color in a world of monochrome) {BSCOMP0013} [MP3-V0]/01 - Nils Hoffmann - Sweet Man Like Me.mp3'
+        Key: fileKeys.sweetManLineMe
       }, {
         disableChunked: disableChunked
       });
@@ -33,6 +40,38 @@ describe('S3 Tokenizer', function() {
 
     it('from stream', async () => {
       await checkFileInfo(true);
+    });
+
+  });
+
+  describe('Determine file-type on S3', () => {
+
+    async function determineFileType(key:string, options: IS3Options): Promise<FileTypeResult> {
+
+      const tokenizer = await makeTokenizer(s3, {
+        Bucket: 'music-metadata',
+        Key: key
+      }, options);
+
+      return await fileTypeFromTokenizer(tokenizer);
+    }
+
+    it('from 8MB MP3 file', async () => {
+      const fileType = await determineFileType(fileKeys.sweetManLineMe, {disableChunked: false});
+      assert.isDefined(fileType, 'determine file-type');
+      assert.strictEqual(fileType.mime, 'audio/mpeg', 'fileType.mime');
+    });
+
+    it('from 1 GB Matroska file', async () => {
+      const fileType = await determineFileType(fileKeys.secretGarden, {disableChunked: false});
+      assert.isDefined(fileType, 'determine file-type');
+      assert.strictEqual(fileType.mime, 'video/x-matroska', 'fileType.mime');
+    });
+
+    it('from 2.5 GB Matroska file', async () => {
+      const fileType = await determineFileType(fileKeys.hisenseTibet, {disableChunked: false});
+      assert.isDefined(fileType, 'determine file-type');
+      assert.strictEqual(fileType.mime, 'video/x-matroska', 'fileType.mime');
     });
 
   });
