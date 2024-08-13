@@ -1617,6 +1617,7 @@ __metadata:
     del-cli: "npm:^5.1.0"
     file-type: "npm:^19.4.1"
     mocha: "npm:^10.7.3"
+    music-metadata: "npm:^10.2.0"
     strtok3: "npm:^8.1.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.5.4"
@@ -2082,6 +2083,13 @@ __metadata:
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
   checksum: 10c0/c996b1cfdf95b6c90fee4dae37e332c8b6eb7d106430c17d538034c0ad9a1630cb194d2ab37293b1bdd4d779494beee7786d586a50bd9376fd6f7bcc2bd4c98f
+  languageName: node
+  linkType: hard
+
+"content-type@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "content-type@npm:1.0.5"
+  checksum: 10c0/b76ebed15c000aee4678c3707e0860cb6abd4e680a598c0a26e17f0bfae723ec9cc2802f0ff1bc6e4d80603719010431d2231018373d4dde10f9ccff9dadf5af
   languageName: node
   linkType: hard
 
@@ -2959,6 +2967,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"media-typer@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "media-typer@npm:1.1.0"
+  checksum: 10c0/7b4baa40b25964bb90e2121ee489ec38642127e48d0cc2b6baa442688d3fde6262bfdca86d6bbf6ba708784afcac168c06840c71facac70e390f5f759ac121b9
+  languageName: node
+  linkType: hard
+
 "meow@npm:^10.1.3":
   version: 10.1.3
   resolution: "meow@npm:10.1.3"
@@ -3183,6 +3198,22 @@ __metadata:
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
   checksum: 10c0/d924b57e7312b3b63ad21fc5b3dc0af5e78d61a1fc7cfb5457edaf26326bf62be5307cc87ffb6862ef1c2b33b0233cdb5d4f01c4c958cc0d660948b65a287a48
+  languageName: node
+  linkType: hard
+
+"music-metadata@npm:^10.2.0":
+  version: 10.2.0
+  resolution: "music-metadata@npm:10.2.0"
+  dependencies:
+    "@tokenizer/token": "npm:^0.3.0"
+    content-type: "npm:^1.0.5"
+    debug: "npm:^4.3.4"
+    file-type: "npm:^19.4.1"
+    media-typer: "npm:^1.1.0"
+    strtok3: "npm:^8.1.0"
+    token-types: "npm:^6.0.0"
+    uint8array-extras: "npm:^1.4.0"
+  checksum: 10c0/0278cedd224d089e1a07fad16209f85abb687269c0f1781810e82ebe5e4a65d3e0fc20ceb3efadd076e1582c8baab4a2839853873e4c14ec996c125cbbc29e3b
   languageName: node
   linkType: hard
 
@@ -3931,7 +3962,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uint8array-extras@npm:^1.3.0":
+"uint8array-extras@npm:^1.3.0, uint8array-extras@npm:^1.4.0":
   version: 1.4.0
   resolution: "uint8array-extras@npm:1.4.0"
   checksum: 10c0/eaffd3388634b7e5e1496073b878dd19136043137d3e7e0d2a453e37f566a5a551e640819e1a6596c6df9b9d1f7b70884cc29db6a357bdd424811f3598d504dd
