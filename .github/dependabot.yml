@@ -10,3 +10,6 @@ updates:
       - dependencies
     target-branch: master
     versioning-strategy: increase
+    ignore:
+      - dependency-name: "@aws-sdk/client-s3"
+        update-types: ["version-update:semver-patch"]
