@@ -5,7 +5,13 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/Borewit/tokenizer-s3/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Borewit/tokenizer-s3?targetFile=package.json)
 
 # @tokenizer/s3
-Specialized [_tokenizer_](https://github.com/Borewit/strtok3#tokenizer) to access files stored on the  [Amazon Web Services (AWS) S3 cloud storage](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html).
+The tokenizer-s3 module enables seamless integration with [Amazon Web Services (AWS) S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html), allowing you to read and tokenize data from S3 objects in a streaming fashion. This module extends the functionality of the strtok3 tokenizer by providing support for chunked S3 data access.
+
+## Features
+Streaming Support: Efficiently read and tokenize data from Amazon S3 objects using streaming, which is ideal for handling large files without loading them entirely into memory.
+Integration with [strtok3](https://github.com/Borewit/strtok3): Works seamlessly with the [strtok3](https://github.com/Borewit/strtok3) tokenizer to process S3 data streams, making it easy to handle various tokenization tasks.
+Flexible Access: Provides options to configure S3 access, allowing for customized tokenization workflows based on your specific needs.
+Promise-Based API: Utilizes a promise-based API for easy integration into modern asynchronous workflows.
 
 ## Installation
 
