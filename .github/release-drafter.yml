@@ -4,7 +4,7 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
-  - title: ⚠️ API Changes
+  - title: 💥 API Changes
     labels:
       - API change
   - title: 🚀 Enhancements
@@ -19,10 +19,12 @@ categories:
   - title: 🔧 Under the hood
     labels:
       - debt
-      - dev-dependencies
   - title: ⬆️ Dependencies
     labels:
       - dependencies
+  - title: 📝 Documentation
+    labels:
+      - documentation
 exclude-labels:
   - DevOps
   - dev-dependencies
