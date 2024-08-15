@@ -27,10 +27,10 @@ To configure AWS client authentication see [Configuration and credential file se
 
 Determine file type (based on it's content) from a file stored Amazon S3 cloud:
 ```js
-const FileType = require('file-type');
+import { fileTypeFromTokenizer } from 'file-type';
 import { fromEnv } from '@aws-sdk/credential-providers';
 import { S3Client } from '@aws-sdk/client-s3';
-const { makeTokenizer } = require('@tokenizer/s3');
+import { makeTokenizer } from '@tokenizer/s3';
 
 (async () => {
 
@@ -40,14 +40,14 @@ const { makeTokenizer } = require('@tokenizer/s3');
     credentials: fromEnv(),
   });
 
-  // Initialize  S3 tokenizer
+  // Initialize S3 tokenizer
   const s3Tokenizer = await makeTokenizer(s3, {
     Bucket: 'affectlab',
     Key: '1min_35sec.mp4'
   });
 
   // Figure out what kind of file it is
-  const fileType = await FileType.fromTokenizer(s3Tokenizer);
+  const fileType = await fileTypeFromTokenizer(s3Tokenizer);
   console.log(fileType);
 })();
 ```
@@ -58,9 +58,9 @@ See also [example at file-type](https://github.com/sindresorhus/file-type#filety
 
 Retrieve music-metadata 
 ```js
-const s3tokenizer = require("@tokenizer/s3");
-const { S3Client } = require('@aws-sdk/client-s3');
-const mm = require("music-metadata/lib/core");
+import { makeTokenizer } from '@tokenizer/s3';
+import { S3Client } from '@aws-sdk/client-s3';
+import { parseFromTokenizer } from 'music-metadata/lib/core';
 
 /**
  * Retrieve metadata from Amazon S3 object
@@ -69,8 +69,8 @@ const mm = require("music-metadata/lib/core");
  * @return Metadata
  */
 async function parseS3Object(s3, objRequest, options) {
-  const s3Tokenizer = await  s3tokenizer.makeTokenizer(s3, objRequest, options);
-  return mm.parseFromTokenizer(s3Tokenizer, options);
+  const s3Tokenizer = await makeTokenizer(s3, objRequest, options);
+  return parseFromTokenizer(s3Tokenizer, options);
 }
 
 (async () => {
@@ -79,14 +79,13 @@ async function parseS3Object(s3, objRequest, options) {
   const metadata = await parseS3Object(s3, {
     Bucket: 'standing0media',
     Key: '01 Where The Highway Takes Me.mp3'
-    }
-  );
+  });
 
   console.log(metadata);
 })();
 ```
 
-An module implementation of this example can be found in [@music-metadata/s3](https://github.com/Borewit/music-metadata-s3).
+A module implementation of this example can be found in [@music-metadata/s3](https://github.com/Borewit/music-metadata-s3).
 
 ## Dependency graph
 
