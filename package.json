@@ -53,7 +53,7 @@
     "url": "https://github.com/Borewit/tokenizer-s3/issues"
   },
   "dependencies": {
-    "@aws-sdk/credential-providers": "^3.630.0",
+    "@aws-sdk/credential-providers": "^3.631.0",
     "@biomejs/biome": "^1.8.3",
     "@tokenizer/range": "^0.8.0",
     "strtok3": "^8.1.0"
