@@ -65,7 +65,7 @@ const mm = require("music-metadata/lib/core");
 /**
  * Retrieve metadata from Amazon S3 object
  * @param objRequest S3 object request
- * @param options music-metadata options
+ * @param options `tokenizer-s3` options
  * @return Metadata
  */
 async function parseS3Object(s3, objRequest, options) {
