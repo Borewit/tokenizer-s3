@@ -13,3 +13,16 @@ updates:
     ignore:
       - dependency-name: "@aws-sdk/client-s3"
         update-types: ["version-update:semver-patch"]
+    groups:
+      aws-sdk:
+        dependency-type: "production"
+        patterns:
+          - "@aws-sdk/*"
+      remark:
+        dependency-type: "development"
+        patterns:
+          - "remark*"
+      types:
+        dependency-type: "development"
+        patterns:
+          - "@types/*"
