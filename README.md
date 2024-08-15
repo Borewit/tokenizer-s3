@@ -9,17 +9,70 @@ Specialized [_tokenizer_](https://github.com/Borewit/strtok3#tokenizer) to acces
 
 ## Installation
 
-Install using [npm](https://www.npmjs.com/get-npm):
-```shell script
-npm install @tokenizer/s3 @aws-sdk/client-s3
+```shell
+npm install @tokenizer/s3
 ```
 
-or using [yarn](https://yarnpkg.com/):
-```shell script
-yarn add install @tokenizer/s3 @aws-sdk/client-s3
+## Sponsor
+If you appreciate my work and want to support the development of open-source projects like [music-metadata](https://github.com/Borewit/music-metadata), [file-type](https://github.com/sindresorhus/file-type), and [listFix()](https://github.com/Borewit/listFix), consider becoming a sponsor or making a small contribution.
+Your support helps sustain ongoing development and improvements.
+[Become a sponsor to Borewit](https://github.com/sponsors/Borewit)
+
+or
+
+<a href="https://www.buymeacoffee.com/borewit" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy me A coffee" height="41" width="174"></a>
+
+## API Documention
+
+### `makeTokenizer`
+
+Initialize a tokenizer from an Amazon S3 client for use in extracting metadata from media files.
+
+#### Function Signature
+
+```ts
+async function makeTokenizer(
+  s3: S3Client, 
+  objRequest: GetObjectRequest, 
+  options?: IS3Options
+): Promise<ITokenizer>
 ```
 
-To configure AWS client authentication see [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+#### Parameters
+
+- `s3` (`S3Client`):
+  
+  The S3 client used to make requests to Amazon S3.
+  > [!NOTE] 
+  > To configure AWS client authentication see [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+ 
+- `objRequest` (`GetObjectRequest`):
+  
+  The S3 object request containing details about the S3 object to fetch.
+  This includes properties like the bucket name and object key.
+
+- `options` (`IS3Options`, optional):
+  
+  Optional configuration settings for the tokenizer.
+
+  - `disableChunked`: When set to `true`, disables chunked requests and instead fetches the full object with ranged requests.
+
+  For remaining options see [strtok3](https://github.com/Borewit/strtok3/blob/master/README.md).
+
+#### Returns
+ 
+- `Promise<ITokenizer>`:
+ 
+  A Promise that resolves to an instance of `ITokenizer`.
+  This tokenizer can be used to extract metadata from the specified media file in the S3 object.
+
+## Compatibility
+
+Module: version [0.3.0](https://github.com/Borewit/tokenizer-s3/releases/tag/v0.3.0) migrated from [CommonJS](https://en.wikipedia.org/wiki/CommonJS) to [pure ECMAScript Module (ESM)](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
+The distributed JavaScript codebase is compliant with the [ECMAScript 2020 (11th Edition)](https://en.wikipedia.org/wiki/ECMAScript_version_history#11th_Edition_%E2%80%93_ECMAScript_2020) standard.
+
+This module requires a [Node.js ≥ 16](https://nodejs.org/en/about/previous-releases) engine.
+It can also be used in a browser environment when bundled with a module bundler.
 
 ## Examples
 
