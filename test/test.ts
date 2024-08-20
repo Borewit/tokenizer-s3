@@ -18,6 +18,9 @@ const s3 = new S3Client({
   credentials: fromNodeProviderChain(),
 });
 
+/**
+ * Helper function to create a tokenizer for S3 objects
+ */
 async function makeS3TestDataTokenizer(key:string, options?: IS3Options): Promise<ITokenizer> {
 
   return await makeTokenizer(s3, {
