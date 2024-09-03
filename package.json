@@ -55,8 +55,8 @@
   "dependencies": {
     "@aws-sdk/credential-providers": "^3.631.0",
     "@biomejs/biome": "^1.8.3",
-    "@tokenizer/range": "^0.8.0",
-    "strtok3": "^8.1.0"
+    "@tokenizer/range": "^0.10.0",
+    "strtok3": "^9.0.0"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.631.0",
@@ -68,7 +68,7 @@
     "del-cli": "^5.1.0",
     "file-type": "^19.4.1",
     "mocha": "^10.7.3",
-    "music-metadata": "^10.2.0",
+    "music-metadata": "^10.3.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },

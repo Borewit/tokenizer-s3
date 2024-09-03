@@ -9,6 +9,8 @@ type ByteRangeRequest = [number, number];
  */
 export class S3Request implements IRangeRequestClient {
 
+  private readonly abortController = new AbortController();
+
   constructor(private s3: S3Client, private objRequest: GetObjectRequest) {
   }
 
@@ -64,6 +66,10 @@ export class S3Request implements IRangeRequestClient {
     };
     const command = new GetObjectCommand(rangedRequest)
 
-    return this.s3.send(command);
+    return this.s3.send(command, { abortSignal: this.abortController.signal });
+  }
+
+  abort(): void {
+    this.abortController.abort();
   }
 }
