@@ -1619,7 +1619,7 @@ __metadata:
     del-cli: "npm:^5.1.0"
     file-type: "npm:^19.4.1"
     mocha: "npm:^10.7.3"
-    music-metadata: "npm:^10.3.1"
+    music-metadata: "npm:^10.5.0"
     strtok3: "npm:^9.0.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.5.4"
@@ -2137,6 +2137,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debug@npm:^4.3.7":
+  version: 4.3.7
+  resolution: "debug@npm:4.3.7"
+  dependencies:
+    ms: "npm:^2.1.3"
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 10c0/1471db19c3b06d485a622d62f65947a19a23fbd0dd73f7fd3eafb697eec5360cde447fb075919987899b1a2096e85d35d4eb5a4de09a57600ac9cf7e6c8e768b
+  languageName: node
+  linkType: hard
+
 "decamelize-keys@npm:^1.1.0":
   version: 1.1.0
   resolution: "decamelize-keys@npm:1.1.0"
@@ -2357,6 +2369,18 @@ __metadata:
     token-types: "npm:^6.0.0"
     uint8array-extras: "npm:^1.3.0"
   checksum: 10c0/77d186edf030e4fe34b29f707c25e71a11c67f234cc2020c8acb87b9124a4d25afa24ac73bad2e1679bc958f357d29cd1607fad5709b853b5b8edb1ca8fcddba
+  languageName: node
+  linkType: hard
+
+"file-type@npm:^19.5.0":
+  version: 19.5.0
+  resolution: "file-type@npm:19.5.0"
+  dependencies:
+    get-stream: "npm:^9.0.1"
+    strtok3: "npm:^8.1.0"
+    token-types: "npm:^6.0.0"
+    uint8array-extras: "npm:^1.3.0"
+  checksum: 10c0/725a9dc71782afa9013db395205400256aa2ab059de9d859a17626ac3fa06218419accf1cbc887af36c009c4d658bda0313428d684a3932ea3f68323d5f75c27
   languageName: node
   linkType: hard
 
@@ -3203,19 +3227,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"music-metadata@npm:^10.3.1":
-  version: 10.3.1
-  resolution: "music-metadata@npm:10.3.1"
+"music-metadata@npm:^10.5.0":
+  version: 10.5.0
+  resolution: "music-metadata@npm:10.5.0"
   dependencies:
     "@tokenizer/token": "npm:^0.3.0"
     content-type: "npm:^1.0.5"
-    debug: "npm:^4.3.4"
-    file-type: "npm:^19.4.1"
+    debug: "npm:^4.3.7"
+    file-type: "npm:^19.5.0"
     media-typer: "npm:^1.1.0"
-    strtok3: "npm:^8.1.0"
+    strtok3: "npm:^9.0.0"
     token-types: "npm:^6.0.0"
     uint8array-extras: "npm:^1.4.0"
-  checksum: 10c0/013cd6bc012d5a79c7c65a11bf6dd10fdfdddc4397bdb763470c7c2630787158655fe1d6d1ce172ddc49a3c38aa5160396e76570bef18601bdf6a168ba1e1ac1
+  checksum: 10c0/154dcf6249ff47d5e7435a4858495bbf7c66e8ed3239ddbb6966ed7ba110a8afe3d29975a50ec1363a4f3caf06c241124110a14899993d35d19353295968591f
   languageName: node
   linkType: hard
 
