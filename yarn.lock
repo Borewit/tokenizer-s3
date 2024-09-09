@@ -1617,7 +1617,7 @@ __metadata:
     "@types/node": "npm:^22.5.2"
     chai: "npm:^5.1.1"
     del-cli: "npm:^5.1.0"
-    file-type: "npm:^19.4.1"
+    file-type: "npm:^19.5.0"
     mocha: "npm:^10.7.3"
     music-metadata: "npm:^10.5.0"
     strtok3: "npm:^9.0.0"
