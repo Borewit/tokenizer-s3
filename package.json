@@ -53,8 +53,8 @@
     "url": "https://github.com/Borewit/tokenizer-s3/issues"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.645.0",
-    "@aws-sdk/credential-providers": "^3.645.0",
+    "@aws-sdk/client-s3": "^3.651.1",
+    "@aws-sdk/credential-providers": "^3.651.1",
     "@biomejs/biome": "^1.8.3",
     "@tokenizer/range": "^0.10.0",
     "strtok3": "^9.0.0"
