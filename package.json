@@ -55,7 +55,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.645.0",
     "@aws-sdk/credential-providers": "^3.645.0",
-    "@biomejs/biome": "^1.8.3",
+    "@biomejs/biome": "^1.9.2",
     "@tokenizer/range": "^0.10.0",
     "strtok3": "^9.0.0"
   },
