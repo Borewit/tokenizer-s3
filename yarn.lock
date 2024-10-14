@@ -1619,7 +1619,7 @@ __metadata:
     del-cli: "npm:^5.1.0"
     file-type: "npm:^19.5.0"
     mocha: "npm:^10.7.3"
-    music-metadata: "npm:^10.5.0"
+    music-metadata: "npm:^10.5.1"
     strtok3: "npm:^9.0.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.6.2"
@@ -2367,6 +2367,18 @@ __metadata:
     token-types: "npm:^6.0.0"
     uint8array-extras: "npm:^1.3.0"
   checksum: 10c0/725a9dc71782afa9013db395205400256aa2ab059de9d859a17626ac3fa06218419accf1cbc887af36c009c4d658bda0313428d684a3932ea3f68323d5f75c27
+  languageName: node
+  linkType: hard
+
+"file-type@npm:^19.6.0":
+  version: 19.6.0
+  resolution: "file-type@npm:19.6.0"
+  dependencies:
+    get-stream: "npm:^9.0.1"
+    strtok3: "npm:^9.0.1"
+    token-types: "npm:^6.0.0"
+    uint8array-extras: "npm:^1.3.0"
+  checksum: 10c0/ae90ab618d0e759f26806024eb25ade851406301d2deae4b2dca6e9df0de13b4be575114a5f8129e73f6de537644a45fc4eb7cfa8b7dad63316b01b0e6f3bd2e
   languageName: node
   linkType: hard
 
@@ -3213,19 +3225,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"music-metadata@npm:^10.5.0":
-  version: 10.5.0
-  resolution: "music-metadata@npm:10.5.0"
+"music-metadata@npm:^10.5.1":
+  version: 10.5.1
+  resolution: "music-metadata@npm:10.5.1"
   dependencies:
     "@tokenizer/token": "npm:^0.3.0"
     content-type: "npm:^1.0.5"
     debug: "npm:^4.3.7"
-    file-type: "npm:^19.5.0"
+    file-type: "npm:^19.6.0"
     media-typer: "npm:^1.1.0"
-    strtok3: "npm:^9.0.0"
+    strtok3: "npm:^9.0.1"
     token-types: "npm:^6.0.0"
     uint8array-extras: "npm:^1.4.0"
-  checksum: 10c0/154dcf6249ff47d5e7435a4858495bbf7c66e8ed3239ddbb6966ed7ba110a8afe3d29975a50ec1363a4f3caf06c241124110a14899993d35d19353295968591f
+  checksum: 10c0/8fe06ccfe7605144cd3b64ef82dde3a760d82de45f00550c3d63c9bce2b54ee0f7953eaf89b7d99ad918bbe310876ea78429c680e1fbf8557689d00d432b03fd
   languageName: node
   linkType: hard
 
@@ -3420,6 +3432,13 @@ __metadata:
   version: 5.2.0
   resolution: "peek-readable@npm:5.2.0"
   checksum: 10c0/7647d56786c94fc7f5f39923ef5f6ed1da7be92a2c221b743db74f1517821b1e944cc965d8f018a7e6984d969b6ced8a0c421aece7996c0b1981eac9daa4c323
+  languageName: node
+  linkType: hard
+
+"peek-readable@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "peek-readable@npm:5.3.1"
+  checksum: 10c0/49f628e4728887230c158699e422ebb10747f5e02aee930ec10634fa7142e74e67d3fb3a780e7a9b9f092c61bf185f07d167c099b2359b22a58cee3dbfe0e43b
   languageName: node
   linkType: hard
 
@@ -3807,6 +3826,16 @@ __metadata:
     "@tokenizer/token": "npm:^0.3.0"
     peek-readable: "npm:^5.2.0"
   checksum: 10c0/7d7cde9c5a3b195131f3652c8b0cb20d96e80b10d30a19294379e4302d0d4952bdc24a516c8a6cfa82bcb96f5b47e49ec917e8cc23c81052044a2ec41d15fb30
+  languageName: node
+  linkType: hard
+
+"strtok3@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "strtok3@npm:9.0.1"
+  dependencies:
+    "@tokenizer/token": "npm:^0.3.0"
+    peek-readable: "npm:^5.3.1"
+  checksum: 10c0/ab96030c3d30899fc885ed87b305086b6421d64c1a2b9f5240c6ecffde7b819e174d67bd3b1ecc14a10f539c7a818a0ac47386b4bbb2fa913f673b6ed1c0eb78
   languageName: node
   linkType: hard
 
