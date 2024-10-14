@@ -61,9 +61,9 @@
   },
   "devDependencies": {
     "@tokenizer/token": "^0.3.0",
-    "@types/chai": "^4.3.19",
-    "@types/mocha": "^10.0.7",
-    "@types/node": "^22.5.4",
+    "@types/chai": "^5.0.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "^22.7.5",
     "chai": "^5.1.1",
     "del-cli": "^5.1.0",
     "file-type": "^19.5.0",
