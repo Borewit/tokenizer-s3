@@ -1666,7 +1666,7 @@ __metadata:
     file-type: "npm:^19.6.0"
     mocha: "npm:^10.7.3"
     music-metadata: "npm:^10.5.1"
-    strtok3: "npm:^9.0.0"
+    strtok3: "npm:^9.0.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.6.2"
   languageName: unknown
