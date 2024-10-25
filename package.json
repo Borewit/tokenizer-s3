@@ -65,7 +65,7 @@
     "@types/mocha": "^10.0.9",
     "@types/node": "^22.7.9",
     "chai": "^5.1.1",
-    "del-cli": "^5.1.0",
+    "del-cli": "^6.0.0",
     "file-type": "^19.6.0",
     "mocha": "^10.7.3",
     "music-metadata": "^10.5.1",
