@@ -1634,7 +1634,7 @@ __metadata:
     del-cli: "npm:^6.0.0"
     file-type: "npm:^19.6.0"
     mocha: "npm:^10.8.2"
-    music-metadata: "npm:^10.5.1"
+    music-metadata: "npm:^10.6.0"
     strtok3: "npm:^9.1.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.7.2"
@@ -2871,9 +2871,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"music-metadata@npm:^10.5.1":
-  version: 10.5.1
-  resolution: "music-metadata@npm:10.5.1"
+"music-metadata@npm:^10.6.0":
+  version: 10.6.0
+  resolution: "music-metadata@npm:10.6.0"
   dependencies:
     "@tokenizer/token": "npm:^0.3.0"
     content-type: "npm:^1.0.5"
@@ -2883,7 +2883,7 @@ __metadata:
     strtok3: "npm:^9.0.1"
     token-types: "npm:^6.0.0"
     uint8array-extras: "npm:^1.4.0"
-  checksum: 10c0/8fe06ccfe7605144cd3b64ef82dde3a760d82de45f00550c3d63c9bce2b54ee0f7953eaf89b7d99ad918bbe310876ea78429c680e1fbf8557689d00d432b03fd
+  checksum: 10c0/2820ff34114246bd56f85e638f0cac26e49d7a460f2bf150b23f9b001484ed18814ff7d7f1cb38b410ea5fb94dac75b46f7fc817e3a03336731423740b9c1f40
   languageName: node
   linkType: hard
 
