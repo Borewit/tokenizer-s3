@@ -47,7 +47,7 @@ export class S3Request implements IRangeRequestClient {
     const contentRange = parseContentRange(response.ContentRange as string);
 
     return {
-      size: contentRange?.instanceLength,
+      size: contentRange?.instanceLength as number,
       mimeType: response.ContentType,
       contentRange,
       acceptPartialRequests: true,

@@ -1,14 +1,15 @@
 import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
-import { S3Client } from '@aws-sdk/client-s3';
+import { type GetObjectRequest, S3Client } from '@aws-sdk/client-s3';
 import { assert } from 'chai';
-import { type IS3Options, makeTokenizer } from '../lib/index.js';
+import { makeChunkedTokenizerFromS3, makeStreamingTokenizerFromS3 } from '../lib/index.js';
 import { fileTypeFromTokenizer, type FileTypeResult } from 'file-type';
 import { parseFromTokenizer as mmParseFromTokenizer } from 'music-metadata';
-import type { ITokenizer } from 'strtok3';
+import type { IRandomAccessTokenizer, ITokenizer } from 'strtok3';
 
 
 const fileKeys = {
   sweetManLineMe: 'Various Artists - 2008 - netBloc Vol 13 (color in a world of monochrome) {BSCOMP0013} [MP3-V0]/01 - Nils Hoffmann - Sweet Man Like Me.mp3',
+  solidGround: 'Various Artists - 2008 - netBloc Vol 13 (color in a world of monochrome) {BSCOMP0013} [MP3-V0]/02 - Poxfil - Solid Ground.mp3',
   secretGarden: 'movies/lg-uhd-secret-garden.mkv',
   hisenseTibet: 'movies/hisense-tibet-uhd.mkv'
 }
@@ -21,12 +22,17 @@ const s3 = new S3Client({
 /**
  * Helper function to create a tokenizer for S3 objects
  */
-async function makeS3TestDataTokenizer(key:string, options?: IS3Options): Promise<ITokenizer> {
+async function makeS3TestDataTokenizer(key: string, chunked: boolean): Promise<ITokenizer> {
 
-  return await makeTokenizer(s3, {
+  const objectRequest: GetObjectRequest = {
     Bucket: 'music-metadata',
     Key: key
-  }, options);
+  };
+
+  if (chunked) {
+    return makeChunkedTokenizerFromS3(s3, objectRequest);
+  }
+    return makeStreamingTokenizerFromS3(s3, objectRequest);
 }
 
 describe('S3 Tokenizer', function() {
@@ -35,9 +41,9 @@ describe('S3 Tokenizer', function() {
 
   describe('initialize tokenizer.fileInfo', () => {
 
-    async function checkFileInfo(disableChunked) {
+    async function checkFileInfo(chunked) {
 
-      const tokenizer = await makeS3TestDataTokenizer(fileKeys.sweetManLineMe, {disableChunked})
+      const tokenizer = await makeS3TestDataTokenizer(fileKeys.sweetManLineMe, chunked)
 
       // Note that: Amazon S3 returns 'audio/mp3', however the correct MIME-type for MP3 is 'audio/mpeg'
       assert.strictEqual(tokenizer.fileInfo.mimeType, 'audio/mp3', 'tokenizer.fileInfo.mimeType');
@@ -56,25 +62,25 @@ describe('S3 Tokenizer', function() {
 
   describe('Determine file-type on S3', () => {
 
-    async function determineFileType(key:string, options: IS3Options): Promise<FileTypeResult> {
-      const tokenizer = await makeS3TestDataTokenizer(key, options);
+    async function determineFileType(key:string): Promise<FileTypeResult> {
+      const tokenizer = await makeS3TestDataTokenizer(key, true);
       return await fileTypeFromTokenizer(tokenizer);
     }
 
     it('from 8MB MP3 file', async () => {
-      const fileType = await determineFileType(fileKeys.sweetManLineMe, {disableChunked: false});
+      const fileType = await determineFileType(fileKeys.sweetManLineMe);
       assert.isDefined(fileType, 'determine file-type');
       assert.strictEqual(fileType.mime, 'audio/mpeg', 'fileType.mime');
     });
 
     it('from 1 GB Matroska file', async () => {
-      const fileType = await determineFileType(fileKeys.secretGarden, {disableChunked: false});
+      const fileType = await determineFileType(fileKeys.secretGarden);
       assert.isDefined(fileType, 'determine file-type');
       assert.strictEqual(fileType.mime, 'video/x-matroska', 'fileType.mime');
     });
 
     it('from 2.5 GB Matroska file', async () => {
-      const fileType = await determineFileType(fileKeys.hisenseTibet, {disableChunked: false});
+      const fileType = await determineFileType(fileKeys.hisenseTibet);
       assert.isDefined(fileType, 'determine file-type');
       assert.strictEqual(fileType.mime, 'video/x-matroska', 'fileType.mime');
     });
@@ -85,14 +91,14 @@ describe('S3 Tokenizer', function() {
   describe('Read music-metadata on S3', () => {
 
     it('from 8MB MP3 file', async () => {
-      const tokenizer = await makeS3TestDataTokenizer(fileKeys.sweetManLineMe, {disableChunked: false});
+      const tokenizer = await makeS3TestDataTokenizer(fileKeys.sweetManLineMe, true);
       const metadata = await mmParseFromTokenizer(tokenizer);
       assert.isDefined(metadata, 'determine file-type');
       assert.strictEqual(metadata.format.container, 'MPEG', 'fileType.mime');
     });
 
     it('from 1 GB Matroska file', async () => {
-      const tokenizer = await makeS3TestDataTokenizer(fileKeys.secretGarden, {disableChunked: false, });
+      const tokenizer = await makeS3TestDataTokenizer(fileKeys.secretGarden, true);
       const metadata = await mmParseFromTokenizer(tokenizer, {mkvUseIndex: true});
       assert.isDefined(metadata, 'determine file-type');
       assert.strictEqual(metadata.format.container, 'EBML/matroska', 'fileType.mime');
@@ -102,7 +108,7 @@ describe('S3 Tokenizer', function() {
     });
 
     it('from 2.5 GB Matroska file', async () => {
-      const tokenizer = await makeS3TestDataTokenizer(fileKeys.hisenseTibet, {disableChunked: false});
+      const tokenizer = await makeS3TestDataTokenizer(fileKeys.hisenseTibet, true);
       const metadata = await mmParseFromTokenizer(tokenizer, {mkvUseIndex: true});
       assert.isDefined(metadata, 'determine file-type');
       assert.strictEqual(metadata.format.container, 'EBML/matroska', 'fileType.mime');
@@ -111,6 +117,30 @@ describe('S3 Tokenizer', function() {
       assert.approximately(metadata.format.duration, 215.68, 0.01, 'metadata.format.duration');
     });
 
+  });
+
+  it('Random-access-read', async () => {
+    const tokenizer = await makeS3TestDataTokenizer(fileKeys.solidGround, true);
+    try {
+      assert.strictEqual(tokenizer.position, 0);
+      assert.isTrue(tokenizer.supportsRandomAccess(), 'Random access file should be enabled');
+      const textDecoder = new TextDecoder('utf-8');
+      const id3v1HeaderSize = 128;
+      const id3v1Header = new Uint8Array(id3v1HeaderSize);
+      await tokenizer.readBuffer(id3v1Header,{position: tokenizer.fileInfo.size - id3v1HeaderSize});
+      const id3v1Tag = textDecoder.decode(id3v1Header.subarray(0, 3));
+      assert.strictEqual(id3v1Tag, 'TAG');
+      assert.strictEqual(tokenizer.position, tokenizer.fileInfo.size, 'Tokenizer position should be at the end of the file');
+      (tokenizer as IRandomAccessTokenizer).setPosition(0);
+      assert.strictEqual(tokenizer.position, 0, 'Tokenizer position should be at the beginning of the file');
+
+      const id3v2Header = new Uint8Array(3);
+      await tokenizer.readBuffer(id3v2Header);
+      const id3v2Tag = textDecoder.decode(id3v2Header);
+      assert.strictEqual(id3v2Tag, "ID3", 'Read start tag of ID3v2 header at the beginning of the file');
+    } finally {
+      await tokenizer.close();
+    }
   });
 
 });
