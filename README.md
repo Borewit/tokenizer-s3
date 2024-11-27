@@ -30,19 +30,51 @@ or
 
 ## API Documention
 
-### `makeTokenizer`
+### `makeChunkedTokenizerFromS3`
+
+Initialize a tokenizer, with the option for random access, 
+from an Amazon S3 client for use in extracting metadata from media files.
+
+#### Function Signature
+
+```ts
+function makeChunkedTokenizerFromS3(s3: S3Client, objRequest: GetObjectRequest): Promise<IRandomAccessTokenizer>
+```
+Reads from the S3 as a stream.
+
+#### Parameters
+
+- `s3` (`S3Client`):
+
+  The S3 client used to make requests to Amazon S3.
+  > [!NOTE]
+  > To configure AWS client authentication see [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
+- `objRequest` (`GetObjectRequest`):
+
+  The S3 object request containing details about the S3 object to fetch.
+  This includes properties like the bucket name and object key.
+
+- `options` (`IS3Options`, optional):
+
+#### Returns
+
+- `Promise<IRandomAccessTokenizer>`:
+
+  A Promise that resolves to an instance of `IRandomAccessTokenizer`.
+  This tokenizer can be used to extract metadata from the specified media file in the S3 object.
+  It supports [random access](https://en.wikipedia.org/wiki/Random_access) reads. 
+
+### `makeStreamingTokenizerFromS3`
 
 Initialize a tokenizer from an Amazon S3 client for use in extracting metadata from media files.
 
 #### Function Signature
 
 ```ts
-async function makeTokenizer(
-  s3: S3Client, 
-  objRequest: GetObjectRequest, 
-  options?: IS3Options
-): Promise<ITokenizer>
+function makeStreamingTokenizerFromS3(s3: S3Client, objRequest: GetObjectRequest): Promise<ITokenizer>
 ```
+Reads from the S3 as a stream.
 
 #### Parameters
 
@@ -56,14 +88,6 @@ async function makeTokenizer(
   
   The S3 object request containing details about the S3 object to fetch.
   This includes properties like the bucket name and object key.
-
-- `options` (`IS3Options`, optional):
-  
-  Optional configuration settings for the tokenizer.
-
-  - `disableChunked`: When set to `true`, disables chunked requests and instead fetches the full object with ranged requests.
-
-  For remaining options see [strtok3](https://github.com/Borewit/strtok3/blob/master/README.md).
 
 #### Returns
  
@@ -89,7 +113,7 @@ Determine file type (based on it's content) from a file stored Amazon S3 cloud:
 import { fileTypeFromTokenizer } from 'file-type';
 import { fromEnv } from '@aws-sdk/credential-providers';
 import { S3Client } from '@aws-sdk/client-s3';
-import { makeTokenizer } from '@tokenizer/s3';
+import { makeChunkedTokenizerFromS3 } from '@tokenizer/s3';
 
 (async () => {
 
@@ -100,7 +124,7 @@ import { makeTokenizer } from '@tokenizer/s3';
   });
 
   // Initialize S3 tokenizer
-  const s3Tokenizer = await makeTokenizer(s3, {
+  const s3Tokenizer = await makeChunkedTokenizerFromS3(s3, {
     Bucket: 'affectlab',
     Key: '1min_35sec.mp4'
   });
@@ -117,7 +141,7 @@ See also [example at file-type](https://github.com/sindresorhus/file-type#filety
 
 Retrieve music-metadata 
 ```js
-import { makeTokenizer } from '@tokenizer/s3';
+import { makeChunkedTokenizerFromS3 } from '@tokenizer/s3';
 import { S3Client } from '@aws-sdk/client-s3';
 import { parseFromTokenizer } from 'music-metadata/lib/core';
 
@@ -128,7 +152,7 @@ import { parseFromTokenizer } from 'music-metadata/lib/core';
  * @return Metadata
  */
 async function parseS3Object(s3, objRequest, options) {
-  const s3Tokenizer = await makeTokenizer(s3, objRequest, options);
+  const s3Tokenizer = await makeChunkedTokenizerFromS3(s3, objRequest);
   return parseFromTokenizer(s3Tokenizer, options);
 }
 
