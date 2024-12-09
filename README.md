@@ -104,6 +104,8 @@ The distributed JavaScript codebase is compliant with the [ECMAScript 2020 (11th
 This module requires a [Node.js ≥ 16](https://nodejs.org/en/about/previous-releases) engine.
 It can also be used in a browser environment when bundled with a module bundler.
 
+For TypeScript CommonJs backward compatibility, you can use [load-esm](https://github.com/Borewit/load-esm).
+
 ## Examples
 
 ### Determine S3 file type
