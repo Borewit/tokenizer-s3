@@ -134,15 +134,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/client-s3@npm:^3.735.0":
-  version: 3.735.0
-  resolution: "@aws-sdk/client-s3@npm:3.735.0"
+"@aws-sdk/client-s3@npm:^3.738.0":
+  version: 3.738.0
+  resolution: "@aws-sdk/client-s3@npm:3.738.0"
   dependencies:
     "@aws-crypto/sha1-browser": "npm:5.2.0"
     "@aws-crypto/sha256-browser": "npm:5.2.0"
     "@aws-crypto/sha256-js": "npm:5.2.0"
     "@aws-sdk/core": "npm:3.734.0"
-    "@aws-sdk/credential-provider-node": "npm:3.734.0"
+    "@aws-sdk/credential-provider-node": "npm:3.738.0"
     "@aws-sdk/middleware-bucket-endpoint": "npm:3.734.0"
     "@aws-sdk/middleware-expect-continue": "npm:3.734.0"
     "@aws-sdk/middleware-flexible-checksums": "npm:3.735.0"
@@ -194,7 +194,7 @@ __metadata:
     "@smithy/util-utf8": "npm:^4.0.0"
     "@smithy/util-waiter": "npm:^4.0.2"
     tslib: "npm:^2.6.2"
-  checksum: 10c0/1378a40e9ac1ae68bcfe930c9244f04f95ad5aef9db52444bfb6f4c876fed413dc815c03c96c6ab90246e56fe6eba5604d6e784bb6350a4623cb78d52458ca40
+  checksum: 10c0/f122c86cfd942c5b8b3183d95f0dc7bf7c980c9be82d0d9c079691ce521ab9e4b4ddb024c33a9a631a050dcae53eda9e065920593b385535784ec396b57a5802
   languageName: node
   linkType: hard
 
@@ -325,26 +325,6 @@ __metadata:
     "@smithy/types": "npm:^4.1.0"
     tslib: "npm:^2.6.2"
   checksum: 10c0/f7b4824875088754a09b5afc9efe5424b56d061eb3af98052be8d7e62c9b1530c4de213e2353ca2f85eb312aec16a54ad550530f41ca626eeaf86ce694b9ece0
-  languageName: node
-  linkType: hard
-
-"@aws-sdk/credential-provider-node@npm:3.734.0":
-  version: 3.734.0
-  resolution: "@aws-sdk/credential-provider-node@npm:3.734.0"
-  dependencies:
-    "@aws-sdk/credential-provider-env": "npm:3.734.0"
-    "@aws-sdk/credential-provider-http": "npm:3.734.0"
-    "@aws-sdk/credential-provider-ini": "npm:3.734.0"
-    "@aws-sdk/credential-provider-process": "npm:3.734.0"
-    "@aws-sdk/credential-provider-sso": "npm:3.734.0"
-    "@aws-sdk/credential-provider-web-identity": "npm:3.734.0"
-    "@aws-sdk/types": "npm:3.734.0"
-    "@smithy/credential-provider-imds": "npm:^4.0.1"
-    "@smithy/property-provider": "npm:^4.0.1"
-    "@smithy/shared-ini-file-loader": "npm:^4.0.1"
-    "@smithy/types": "npm:^4.1.0"
-    tslib: "npm:^2.6.2"
-  checksum: 10c0/5ef9d24a473e73c831748bde93169ca4634d7f7e4ac1b5100d78f08c407b3bc0ffe7ff21b65c6a04b0e7c1fe9a4c484a1348b3e63cb6e394d72066940c5ea507
   languageName: node
   linkType: hard
 
@@ -1584,7 +1564,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tokenizer/s3@workspace:."
   dependencies:
-    "@aws-sdk/client-s3": "npm:^3.735.0"
+    "@aws-sdk/client-s3": "npm:^3.738.0"
     "@aws-sdk/credential-providers": "npm:^3.738.0"
     "@biomejs/biome": "npm:1.9.4"
     "@tokenizer/range": "npm:^0.12.0"
