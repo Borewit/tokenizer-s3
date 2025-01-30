@@ -2419,7 +2419,7 @@ __metadata:
     file-type: "npm:^19.6.0"
     mocha: "npm:^11.0.1"
     music-metadata: "npm:^10.6.4"
-    strtok3: "npm:^10.0.1"
+    strtok3: "npm:^10.1.2"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.7.3"
   peerDependencies:
@@ -3794,6 +3794,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"peek-readable@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "peek-readable@npm:6.0.2"
+  checksum: 10c0/1ea609773ce86371dbfe1aa969da5090e6c19ef997216633f8d0c4530647f4d518e40e7d9a1ca0d358af7df91343b96d1bc4daa0e792bb12a1dfcdd1e8774a24
+  languageName: node
+  linkType: hard
+
 "picomatch@npm:^2.0.4":
   version: 2.2.1
   resolution: "picomatch@npm:2.2.1"
@@ -4054,6 +4061,16 @@ __metadata:
     "@tokenizer/token": "npm:^0.3.0"
     peek-readable: "npm:^5.3.1"
   checksum: 10c0/476ccea29feebef1659d825e71a5e054b80486617139966217f53fd197d9d78d2d6f1e3be52cad7bc7ff71e164d38696adc60f883705fb440be1162a3ce6cb9b
+  languageName: node
+  linkType: hard
+
+"strtok3@npm:^10.1.2":
+  version: 10.1.2
+  resolution: "strtok3@npm:10.1.2"
+  dependencies:
+    "@tokenizer/token": "npm:^0.3.0"
+    peek-readable: "npm:^6.0.2"
+  checksum: 10c0/f754131361637c74f14d832b9dfe6ad9e66de1e37343ada01a050bbf4287670e7c3962e1fb4d32a0c4ed06222ab9e0c9021bb981cf6440c676d723d0d20dbcf6
   languageName: node
   linkType: hard
 
