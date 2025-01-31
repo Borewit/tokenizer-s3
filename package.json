@@ -1,6 +1,6 @@
 {
   "name": "@tokenizer/s3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Amazon S3 tokenizer",
   "type": "module",
   "exports": "./lib/index.js",
