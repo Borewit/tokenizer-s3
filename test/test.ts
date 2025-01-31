@@ -11,7 +11,8 @@ const fileKeys = {
   sweetManLineMe: 'Various Artists - 2008 - netBloc Vol 13 (color in a world of monochrome) {BSCOMP0013} [MP3-V0]/01 - Nils Hoffmann - Sweet Man Like Me.mp3',
   solidGround: 'Various Artists - 2008 - netBloc Vol 13 (color in a world of monochrome) {BSCOMP0013} [MP3-V0]/02 - Poxfil - Solid Ground.mp3',
   secretGarden: 'movies/lg-uhd-secret-garden.mkv',
-  hisenseTibet: 'movies/hisense-tibet-uhd.mkv'
+  hisenseTibet: 'movies/hisense-tibet-uhd.mkv',
+  smallPdf: 'file-type/small.pdf'
 }
 
 const s3 = new S3Client({
@@ -85,8 +86,13 @@ describe('S3 Tokenizer', function() {
       assert.strictEqual(fileType.mime, 'video/x-matroska', 'fileType.mime');
     });
 
-  });
+    it('should parse a very small PDF file', async () => {
+      const fileType = await determineFileType(fileKeys.smallPdf);
+      assert.isDefined(fileType, 'determine file-type');
+      assert.strictEqual(fileType.mime, 'application/pdf', 'fileType.mime');
+    });
 
+  });
 
   describe('Read music-metadata on S3', () => {
 
