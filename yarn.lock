@@ -1577,7 +1577,7 @@ __metadata:
     file-type: "npm:^19.6.0"
     mocha: "npm:^11.1.0"
     music-metadata: "npm:^10.6.4"
-    strtok3: "npm:^10.0.1"
+    strtok3: "npm:^10.2.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.7.3"
   peerDependencies:
