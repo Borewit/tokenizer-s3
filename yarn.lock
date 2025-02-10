@@ -1587,7 +1587,7 @@ __metadata:
     del-cli: "npm:^6.0.0"
     file-type: "npm:^20.0.1"
     mocha: "npm:^11.1.0"
-    music-metadata: "npm:^10.8.2"
+    music-metadata: "npm:^10.9.0"
     strtok3: "npm:^10.2.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.7.3"
@@ -2839,9 +2839,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"music-metadata@npm:^10.8.2":
-  version: 10.8.2
-  resolution: "music-metadata@npm:10.8.2"
+"music-metadata@npm:^10.9.0":
+  version: 10.9.0
+  resolution: "music-metadata@npm:10.9.0"
   dependencies:
     "@tokenizer/token": "npm:^0.3.0"
     content-type: "npm:^1.0.5"
@@ -2849,10 +2849,10 @@ __metadata:
     file-type: "npm:^19.6.0"
     link: "npm:^2.1.1"
     media-typer: "npm:^1.1.0"
-    strtok3: "npm:^10.2.0"
+    strtok3: "npm:^10.2.1"
     token-types: "npm:^6.0.0"
     uint8array-extras: "npm:^1.4.0"
-  checksum: 10c0/cf8e1e73648fc19503a9f24f1c22195ccef982c23bc4553981830a6094170eff188a230b4d1def24383aa008a1d06b210b1032452ae42424c69f7f371acfe618
+  checksum: 10c0/7c455f34643b34a6b94ac3e0d56dba2e24b19c2ee6941ab43864af5a3cfcc71aa862989302b260379521041f3d5207ab46eccc55b47cf325964f00ef7590959e
   languageName: node
   linkType: hard
 
@@ -2998,6 +2998,13 @@ __metadata:
   version: 6.1.0
   resolution: "peek-readable@npm:6.1.0"
   checksum: 10c0/e98fa8ad3908889a4db7c8bebe7e57c9ca6cfdda3206591cce330a8ad1681c05fab15ee7871ebe1c52d0d1982c561039e88aa915f1dd4ae203593944e2a59ee2
+  languageName: node
+  linkType: hard
+
+"peek-readable@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "peek-readable@npm:6.1.1"
+  checksum: 10c0/5200f480e34b93ba95d13353bbec672cc9fd778377d3eb5fc07f4417486a68445bc23100838afc95493fa89c8263522ea01323e7fd28fc5a737cc876466bfedb
   languageName: node
   linkType: hard
 
@@ -3272,6 +3279,16 @@ __metadata:
     "@tokenizer/token": "npm:^0.3.0"
     peek-readable: "npm:^6.1.0"
   checksum: 10c0/b8ce1fe96cb46f466c979b0349163c09da03ae6e3e23db050c27be3b548f42402336f095aa70e7698e80fec614c84bf84ebcefe9238c3ba8c4a71a34595fc451
+  languageName: node
+  linkType: hard
+
+"strtok3@npm:^10.2.1":
+  version: 10.2.1
+  resolution: "strtok3@npm:10.2.1"
+  dependencies:
+    "@tokenizer/token": "npm:^0.3.0"
+    peek-readable: "npm:^6.1.1"
+  checksum: 10c0/864d88358c1cbca5c1a4538e74189ea89e0ed89d46cafe82178a2bb8b2bf22d5882da711fe73e9eaacad9cf1a3f875aa5a666900f3b0af6a7f5d8d94b211af1f
   languageName: node
   linkType: hard
 
