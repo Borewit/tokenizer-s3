@@ -71,7 +71,7 @@
     "chai": "^5.2.0",
     "del-cli": "^6.0.0",
     "file-type": "^20.5.0",
-    "mocha": "^11.1.0",
+    "mocha": "^11.4.0",
     "music-metadata": "^11.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
