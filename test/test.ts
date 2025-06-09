@@ -77,13 +77,13 @@ describe('S3 Tokenizer', function() {
     it('from 1 GB Matroska file', async () => {
       const fileType = await determineFileType(fileKeys.secretGarden);
       assert.isDefined(fileType, 'determine file-type');
-      assert.strictEqual(fileType.mime, 'video/x-matroska', 'fileType.mime');
+      assert.strictEqual(fileType.mime, 'video/matroska', 'fileType.mime');
     });
 
     it('from 2.5 GB Matroska file', async () => {
       const fileType = await determineFileType(fileKeys.hisenseTibet);
       assert.isDefined(fileType, 'determine file-type');
-      assert.strictEqual(fileType.mime, 'video/x-matroska', 'fileType.mime');
+      assert.strictEqual(fileType.mime, 'video/matroska', 'fileType.mime');
     });
 
     it('should parse a very small PDF file', async () => {
