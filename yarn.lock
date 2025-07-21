@@ -1530,17 +1530,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tokenizer/inflate@npm:^0.2.6":
-  version: 0.2.6
-  resolution: "@tokenizer/inflate@npm:0.2.6"
-  dependencies:
-    debug: "npm:^4.3.7"
-    fflate: "npm:^0.8.2"
-    token-types: "npm:^6.0.0"
-  checksum: 10c0/7c0e5e85c86fd3dbe4210d26fa16a2121d04ca053eeb2c42826846e85650c585621ca80e587107410a1e664b50ba37fd645e973863aafa9dee594efbab104619
-  languageName: node
-  linkType: hard
-
 "@tokenizer/inflate@npm:^0.2.7":
   version: 0.2.7
   resolution: "@tokenizer/inflate@npm:0.2.7"
@@ -1578,7 +1567,7 @@ __metadata:
     del-cli: "npm:^6.0.0"
     file-type: "npm:^21.0.0"
     mocha: "npm:^11.6.0"
-    music-metadata: "npm:^11.2.3"
+    music-metadata: "npm:^11.7.1"
     strtok3: "npm:^10.3.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.8.3"
@@ -1888,18 +1877,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.3.7":
-  version: 4.3.7
-  resolution: "debug@npm:4.3.7"
-  dependencies:
-    ms: "npm:^2.1.3"
-  peerDependenciesMeta:
-    supports-color:
-      optional: true
-  checksum: 10c0/1471db19c3b06d485a622d62f65947a19a23fbd0dd73f7fd3eafb697eec5360cde447fb075919987899b1a2096e85d35d4eb5a4de09a57600ac9cf7e6c8e768b
-  languageName: node
-  linkType: hard
-
 "debug@npm:^4.4.0":
   version: 4.4.0
   resolution: "debug@npm:4.4.0"
@@ -2051,18 +2028,6 @@ __metadata:
   version: 0.8.2
   resolution: "fflate@npm:0.8.2"
   checksum: 10c0/03448d630c0a583abea594835a9fdb2aaf7d67787055a761515bf4ed862913cfd693b4c4ffd5c3f3b355a70cf1e19033e9ae5aedcca103188aaff91b8bd6e293
-  languageName: node
-  linkType: hard
-
-"file-type@npm:^20.5.0":
-  version: 20.5.0
-  resolution: "file-type@npm:20.5.0"
-  dependencies:
-    "@tokenizer/inflate": "npm:^0.2.6"
-    strtok3: "npm:^10.2.0"
-    token-types: "npm:^6.0.0"
-    uint8array-extras: "npm:^1.4.0"
-  checksum: 10c0/9b13d7e4eca79752008f036712a42df78393f05b88b9013c5754b04d3eb90b051cb692836a04acf7d2c696cb9f28077ddf8ebd6830175807f14fddf837d63be3
   languageName: node
   linkType: hard
 
@@ -2431,19 +2396,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"music-metadata@npm:^11.2.3":
-  version: 11.2.3
-  resolution: "music-metadata@npm:11.2.3"
+"music-metadata@npm:^11.7.1":
+  version: 11.7.1
+  resolution: "music-metadata@npm:11.7.1"
   dependencies:
     "@tokenizer/token": "npm:^0.3.0"
     content-type: "npm:^1.0.5"
     debug: "npm:^4.4.1"
-    file-type: "npm:^20.5.0"
+    file-type: "npm:^21.0.0"
     media-typer: "npm:^1.1.0"
-    strtok3: "npm:^10.2.2"
-    token-types: "npm:^6.0.0"
+    strtok3: "npm:^10.3.2"
+    token-types: "npm:^6.0.3"
     uint8array-extras: "npm:^1.4.0"
-  checksum: 10c0/7c98ed0190909ca2d03c4448d106ced7136f582af829d2af21f3dfb7fb517a4f7342237544e7199930b392d9b406c932175a5337facddbf9e58d4fc57b4f05b0
+  checksum: 10c0/9588845e9fada8f6dfc44c0e0595f8f6f5e9072e9af5039b9b381e8274a4f8f3c8f99488be52f1df3fc8410fb6f3e9ad7cee9ec4acedf5b9ddfc50ae5216fede
   languageName: node
   linkType: hard
 
@@ -2738,6 +2703,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"strtok3@npm:^10.3.2":
+  version: 10.3.2
+  resolution: "strtok3@npm:10.3.2"
+  dependencies:
+    "@tokenizer/token": "npm:^0.3.0"
+  checksum: 10c0/cbdc2686cfd6127cf726f8ad5f81ebf100bc4609a5fd620f9ba111cda92b7baf789e71337c99978965730eac0645ef1b6dc5d673ac5171f51d776527b9432ce1
+  languageName: node
+  linkType: hard
+
 "supports-color@npm:^7.1.0":
   version: 7.2.0
   resolution: "supports-color@npm:7.2.0"
@@ -2772,6 +2746,16 @@ __metadata:
     "@tokenizer/token": "npm:^0.3.0"
     ieee754: "npm:^1.2.1"
   checksum: 10c0/5bf5eba51d63f71f301659ff70ce10ca43e7038364883437d8b4541cc98377e3e56109b11720e25fe51047014efaccdff90eaf6de9a78270483578814b838ab9
+  languageName: node
+  linkType: hard
+
+"token-types@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "token-types@npm:6.0.3"
+  dependencies:
+    "@tokenizer/token": "npm:^0.3.0"
+    ieee754: "npm:^1.2.1"
+  checksum: 10c0/9fbd60754329cef6a793a81e62cb81880a52619b05c3ee96bb8b0f698e8f515c0e3d3159fc3b9cdec55271b6b839cba63cd6d387be4b4f63c1e4f222eb34a858
   languageName: node
   linkType: hard
 
