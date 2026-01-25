@@ -15,7 +15,6 @@ updates:
         update-types: ["version-update:semver-patch"]
     groups:
       aws-sdk:
-        dependency-type: "production"
         patterns:
           - "@aws-sdk/*"
       remark:
