@@ -53,7 +53,7 @@
     "url": "https://github.com/Borewit/tokenizer-s3/issues"
   },
   "dependencies": {
-    "@tokenizer/range": "^0.13.0",
+    "@tokenizer/range": "^0.13.1",
     "strtok3": "^10.3.4"
   },
   "peerDependencies": {

@@ -1558,13 +1558,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tokenizer/range@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@tokenizer/range@npm:0.13.0"
+"@tokenizer/range@npm:^0.13.1":
+  version: 0.13.1
+  resolution: "@tokenizer/range@npm:0.13.1"
   dependencies:
-    debug: "npm:^4.4.0"
-    strtok3: "npm:^10.2.0"
-  checksum: 10c0/4a6a457f022624bb99ec3d52f79fe01943c3a920f1bbea6c0305f9c2795ec9c6695d8f152851365cc7bd7ec24781ee15aabf67824499b68bbc220756e05fa4b0
+    debug: "npm:^4.4.3"
+    strtok3: "npm:^10.3.4"
+  checksum: 10c0/b8bb1359eb3eaa763a908a958a6fcb0088443745eff352877f56b5d691bfe8520d81aacb114d433b6b42af2135b33bea6eb02d7ac04753b0f27ece3e1738081e
   languageName: node
   linkType: hard
 
@@ -1575,7 +1575,7 @@ __metadata:
     "@aws-sdk/client-s3": "npm:^3.826.0"
     "@aws-sdk/credential-providers": "npm:^3.826.0"
     "@biomejs/biome": "npm:1.9.4"
-    "@tokenizer/range": "npm:^0.13.0"
+    "@tokenizer/range": "npm:^0.13.1"
     "@tokenizer/token": "npm:^0.3.0"
     "@types/chai": "npm:^5.2.2"
     "@types/mocha": "npm:^10.0.10"
@@ -2530,13 +2530,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"peek-readable@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "peek-readable@npm:6.1.0"
-  checksum: 10c0/e98fa8ad3908889a4db7c8bebe7e57c9ca6cfdda3206591cce330a8ad1681c05fab15ee7871ebe1c52d0d1982c561039e88aa915f1dd4ae203593944e2a59ee2
-  languageName: node
-  linkType: hard
-
 "peek-readable@npm:^7.0.0":
   version: 7.0.0
   resolution: "peek-readable@npm:7.0.0"
@@ -2712,16 +2705,6 @@ __metadata:
   version: 1.0.5
   resolution: "strnum@npm:1.0.5"
   checksum: 10c0/64fb8cc2effbd585a6821faa73ad97d4b553c8927e49086a162ffd2cc818787643390b89d567460a8e74300148d11ac052e21c921ef2049f2987f4b1b89a7ff1
-  languageName: node
-  linkType: hard
-
-"strtok3@npm:^10.2.0":
-  version: 10.2.0
-  resolution: "strtok3@npm:10.2.0"
-  dependencies:
-    "@tokenizer/token": "npm:^0.3.0"
-    peek-readable: "npm:^6.1.0"
-  checksum: 10c0/b8ce1fe96cb46f466c979b0349163c09da03ae6e3e23db050c27be3b548f42402336f095aa70e7698e80fec614c84bf84ebcefe9238c3ba8c4a71a34595fc451
   languageName: node
   linkType: hard
 
