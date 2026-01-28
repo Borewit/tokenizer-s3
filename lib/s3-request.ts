@@ -41,7 +41,7 @@ export class S3Request implements IRangeRequestClient {
       throw new Error('body expected to be an instance of Readable ');
   }
 
-  public async getResponse(method: string | undefined, range: ByteRangeRequest): Promise<IRangeRequestResponse> {
+  public async getResponse(_method: string | undefined, range: ByteRangeRequest): Promise<IRangeRequestResponse> {
 
     const response: GetObjectCommandOutput = await this.getRangedRequest(range);
     const contentRange = parseContentRange(response.ContentRange as string);

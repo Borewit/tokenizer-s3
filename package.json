@@ -18,8 +18,10 @@
     "compile": "yarn run compile-lib && yarn run compile-test",
     "build": "yarn run clean && yarn run compile",
     "eslint": "eslint lib test",
-    "lint-ts": "biome check",
-    "lint": "yarn run lint-ts"
+    "lint:ts": "biome check",
+    "lint": "yarn run lint:ts",
+    "prepublishOnly": "yarn run build",
+    "update-biome": "yarn add -D --exact @biomejs/biome && npx @biomejs/biome migrate --write"
   },
   "keywords": [
     "audio",
@@ -63,7 +65,7 @@
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.975.0",
     "@aws-sdk/credential-providers": "^3.975.0",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.3.13",
     "@tokenizer/token": "^0.3.0",
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
