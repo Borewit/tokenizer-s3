@@ -1785,7 +1785,7 @@ __metadata:
     del-cli: "npm:^7.0.0"
     file-type: "npm:^21.3.0"
     mocha: "npm:^11.7.5"
-    music-metadata: "npm:^11.11.0"
+    music-metadata: "npm:^11.12.0"
     strtok3: "npm:^10.3.4"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.9.3"
@@ -2562,9 +2562,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"music-metadata@npm:^11.11.0":
-  version: 11.11.0
-  resolution: "music-metadata@npm:11.11.0"
+"music-metadata@npm:^11.12.0":
+  version: 11.12.0
+  resolution: "music-metadata@npm:11.12.0"
   dependencies:
     "@borewit/text-codec": "npm:^0.2.1"
     "@tokenizer/token": "npm:^0.3.0"
@@ -2575,8 +2575,8 @@ __metadata:
     strtok3: "npm:^10.3.4"
     token-types: "npm:^6.1.2"
     uint8array-extras: "npm:^1.5.0"
-    win-guid: "npm:^0.2.0"
-  checksum: 10c0/c15934dc19345113f25a0188eaa3b33345ddecab83ad9149a83b8b3c988f98d7738569c6d8297e45e5379fa566eda425882a76eabf92335e9db829610594ed8f
+    win-guid: "npm:^0.2.1"
+  checksum: 10c0/014a120b8941ab80452171def0ec3cba013041ba4b94f8061ad493a037d3423e6d316131a13fb0433404685ebd3c8e3ae2255c1bafaeb20673fcd73af2df0148
   languageName: node
   linkType: hard
 
@@ -2986,10 +2986,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"win-guid@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "win-guid@npm:0.2.0"
-  checksum: 10c0/b0734ea10fda4fcc0dc28a740e2f55c0e8c2687a8ea182498df3b7dadf8cf19700c22ebb839fde2f66f48c50153e1c0f3df76437661a4129553ce1c68379bf4b
+"win-guid@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "win-guid@npm:0.2.1"
+  checksum: 10c0/4ef31b8553f9f6c775f71f8cda399b6089444657c8dec9cf3ffb4c4f074fb6a11806d7e7bcc4a1fa92015bcb54f1085ae860e9b9a9dca83129bdb3cd90f8c54a
   languageName: node
   linkType: hard
 
