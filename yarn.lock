@@ -1783,7 +1783,7 @@ __metadata:
     "@types/node": "npm:^22.15.18"
     chai: "npm:^6.2.2"
     del-cli: "npm:^7.0.0"
-    file-type: "npm:^21.3.0"
+    file-type: "npm:^22.0.0"
     mocha: "npm:^11.7.5"
     music-metadata: "npm:^11.11.0"
     strtok3: "npm:^10.3.4"
@@ -2214,6 +2214,18 @@ __metadata:
     token-types: "npm:^6.1.1"
     uint8array-extras: "npm:^1.4.0"
   checksum: 10c0/1b1fa909e6063044a6da1d2ea348ee4d747ed9286382d3f0d4d6532c11fb2ea9f2e7e67b2bc7d745d1bc937e05dee1aa8cb912c64250933bcb393a3744f4e284
+  languageName: node
+  linkType: hard
+
+"file-type@npm:^22.0.0":
+  version: 22.0.0
+  resolution: "file-type@npm:22.0.0"
+  dependencies:
+    "@tokenizer/inflate": "npm:^0.4.1"
+    strtok3: "npm:^10.3.5"
+    token-types: "npm:^6.1.2"
+    uint8array-extras: "npm:^1.5.0"
+  checksum: 10c0/61436eff794f27e6eb3bf40110ae6656d412472fbde88dab42093dc847e5b795ce74c1de5d8ad0798b9a287a40b49d65ed78ed7f0522cfdee0bb709f3fa0a38d
   languageName: node
   linkType: hard
 
@@ -2834,6 +2846,15 @@ __metadata:
   dependencies:
     "@tokenizer/token": "npm:^0.3.0"
   checksum: 10c0/277ab69e417f4545e364ffaf9d560c991f531045dbace32d77b5c822cccd76a608b782785a2c60595274288d4d32dced184a5c21dc20348791da697127dc69a8
+  languageName: node
+  linkType: hard
+
+"strtok3@npm:^10.3.5":
+  version: 10.3.5
+  resolution: "strtok3@npm:10.3.5"
+  dependencies:
+    "@tokenizer/token": "npm:^0.3.0"
+  checksum: 10c0/8d2477b239054c9f1f5b14a65d531147ca158ab9887fdc2d0938e77b7ec8891fb683b58254c7643afd5d98a421a59207534d491762b111f58c795071ecbe9fd1
   languageName: node
   linkType: hard
 
