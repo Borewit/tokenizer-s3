@@ -1,11 +1,17 @@
 import { type IRangeRequestClient, type IRangeRequestResponse, parseContentRange } from '@tokenizer/range';
-import { type GetObjectRequest, GetObjectCommand, type GetObjectCommandOutput } from '@aws-sdk/client-s3';
+import { type GetObjectRequest, GetObjectCommand } from '@aws-sdk/client-s3';
 import { Readable } from 'node:stream';
 
 type ByteRangeRequest = [number, number];
 
+export interface S3RequestResponse {
+  ContentType?: string;
+  ContentRange?: string;
+  Body?: unknown;
+}
+
 export interface S3RequestClient {
-  send(command: GetObjectCommand, options?: { abortSignal?: AbortSignal }): Promise<GetObjectCommandOutput>;
+  send(command: GetObjectCommand, options?: { abortSignal?: AbortSignal }): Promise<S3RequestResponse>;
 }
 
 /**
@@ -34,7 +40,7 @@ export class S3Request implements IRangeRequestClient {
     return merged;
   }
 
-  public async buildArrayBuffer(response: GetObjectCommandOutput): Promise<Uint8Array> {
+  public async buildArrayBuffer(response: S3RequestResponse): Promise<Uint8Array> {
     const buffers: Uint8Array[] = [];
     if (response.Body instanceof Readable) {
       for await (const chunk of response.Body) {
@@ -47,7 +53,7 @@ export class S3Request implements IRangeRequestClient {
 
   public async getResponse(_method: string | undefined, range: ByteRangeRequest): Promise<IRangeRequestResponse> {
 
-    const response: GetObjectCommandOutput = await this.getRangedRequest(range);
+    const response = await this.getRangedRequest(range);
     const contentRange = parseContentRange(response.ContentRange as string);
 
     return {
