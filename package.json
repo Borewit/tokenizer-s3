@@ -72,7 +72,7 @@
     "@types/node": "^25.6.0",
     "chai": "^6.2.2",
     "del-cli": "^7.0.0",
-    "file-type": "^21.3.4",
+    "file-type": "^22.0.1",
     "mocha": "^11.7.5",
     "music-metadata": "^11.12.3",
     "ts-node": "^10.9.2",
