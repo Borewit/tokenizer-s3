@@ -1580,7 +1580,7 @@ __metadata:
     "@types/node": "npm:^25.6.0"
     chai: "npm:^6.2.2"
     del-cli: "npm:^7.0.0"
-    file-type: "npm:^21.3.4"
+    file-type: "npm:^22.0.1"
     mocha: "npm:^11.7.5"
     music-metadata: "npm:^11.12.3"
     strtok3: "npm:^10.3.5"
@@ -2022,7 +2022,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-type@npm:^21.3.1, file-type@npm:^21.3.4":
+"file-type@npm:^21.3.1":
   version: 21.3.4
   resolution: "file-type@npm:21.3.4"
   dependencies:
@@ -2031,6 +2031,18 @@ __metadata:
     token-types: "npm:^6.1.1"
     uint8array-extras: "npm:^1.4.0"
   checksum: 10c0/6f15e7538c5d73f9308d2e897365d253a6647a6751bb1b0d85c78aebc02b8976afb7c6c9b3759687a064b1b3d60246e5504746b8f11e38b0d5a1b339087e00d2
+  languageName: node
+  linkType: hard
+
+"file-type@npm:^22.0.1":
+  version: 22.0.1
+  resolution: "file-type@npm:22.0.1"
+  dependencies:
+    "@tokenizer/inflate": "npm:^0.4.1"
+    strtok3: "npm:^10.3.5"
+    token-types: "npm:^6.1.2"
+    uint8array-extras: "npm:^1.5.0"
+  checksum: 10c0/45b70a10196d46965eadd7835ec408c1c07b4fd2ed395e9bbcc0ad63d93f7bf6d076d0e970673b754577002019c8858825bc71ccc07ca7c0e49ac0c2b7e1839f
   languageName: node
   linkType: hard
 
