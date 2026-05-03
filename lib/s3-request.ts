@@ -1,8 +1,12 @@
 import { type IRangeRequestClient, type IRangeRequestResponse, parseContentRange } from '@tokenizer/range';
-import { type S3Client, type GetObjectRequest, GetObjectCommand, type GetObjectCommandOutput } from '@aws-sdk/client-s3';
+import { type GetObjectRequest, GetObjectCommand, type GetObjectCommandOutput } from '@aws-sdk/client-s3';
 import { Readable } from 'node:stream';
 
 type ByteRangeRequest = [number, number];
+
+export interface S3RequestClient {
+  send(command: GetObjectCommand, options?: { abortSignal?: AbortSignal }): Promise<GetObjectCommandOutput>;
+}
 
 /**
  * Use S3-client to execute actual HTTP-requests.
@@ -11,7 +15,7 @@ export class S3Request implements IRangeRequestClient {
 
   private readonly abortController = new AbortController();
 
-  constructor(private s3: S3Client, private objRequest: GetObjectRequest) {
+  constructor(private s3: S3RequestClient, private objRequest: GetObjectRequest) {
   }
 
   /**
