@@ -87,9 +87,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/client-cognito-identity@npm:3.1041.0":
-  version: 3.1041.0
-  resolution: "@aws-sdk/client-cognito-identity@npm:3.1041.0"
+"@aws-sdk/client-cognito-identity@npm:3.1044.0":
+  version: 3.1044.0
+  resolution: "@aws-sdk/client-cognito-identity@npm:3.1044.0"
   dependencies:
     "@aws-crypto/sha256-browser": "npm:5.2.0"
     "@aws-crypto/sha256-js": "npm:5.2.0"
@@ -130,13 +130,13 @@ __metadata:
     "@smithy/util-retry": "npm:^4.3.6"
     "@smithy/util-utf8": "npm:^4.2.2"
     tslib: "npm:^2.6.2"
-  checksum: 10c0/74553a9385307e0b1f59a0ca197000b445a432bc18003d2ec1bdfc01c74363292560f9706c48bbdc0543e0b36c0f5632e18f88046c080ef736add529a4b5d75a
+  checksum: 10c0/a6fcdffb51d05cbc7f071b98e2cfe20a7e72008f826c97bd5f0c1dc23d965dc085435a4b2e66b8009cb6eca6d6ceecd75b236f130d432f9e9b52bc1c92c4b61a
   languageName: node
   linkType: hard
 
-"@aws-sdk/client-s3@npm:^3.1041.0":
-  version: 3.1041.0
-  resolution: "@aws-sdk/client-s3@npm:3.1041.0"
+"@aws-sdk/client-s3@npm:^3.1044.0":
+  version: 3.1044.0
+  resolution: "@aws-sdk/client-s3@npm:3.1044.0"
   dependencies:
     "@aws-crypto/sha1-browser": "npm:5.2.0"
     "@aws-crypto/sha256-browser": "npm:5.2.0"
@@ -193,7 +193,7 @@ __metadata:
     "@smithy/util-utf8": "npm:^4.2.2"
     "@smithy/util-waiter": "npm:^4.3.0"
     tslib: "npm:^2.6.2"
-  checksum: 10c0/1b8560bef4e62c50a43929a15bfc572d3dd918fb623d9e4ce7faaf7f4120ff9063bc811f4e09e9ddd7798f5c9c4246a0d8904a67a8d48bd906b531389e7c893b
+  checksum: 10c0/a50c8b36e67bce016ade765626296d23c09b12b5eb432dc8ddfb635240ceeab13cac085d29a05ffa04c07938d4c4c78abb2e2f8aea6e1b57432cc68cbbce154c
   languageName: node
   linkType: hard
 
@@ -376,11 +376,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/credential-providers@npm:^3.1041.0":
-  version: 3.1041.0
-  resolution: "@aws-sdk/credential-providers@npm:3.1041.0"
+"@aws-sdk/credential-providers@npm:^3.1044.0":
+  version: 3.1044.0
+  resolution: "@aws-sdk/credential-providers@npm:3.1044.0"
   dependencies:
-    "@aws-sdk/client-cognito-identity": "npm:3.1041.0"
+    "@aws-sdk/client-cognito-identity": "npm:3.1044.0"
     "@aws-sdk/core": "npm:^3.974.8"
     "@aws-sdk/credential-provider-cognito-identity": "npm:^3.972.31"
     "@aws-sdk/credential-provider-env": "npm:^3.972.34"
@@ -400,7 +400,7 @@ __metadata:
     "@smithy/property-provider": "npm:^4.2.14"
     "@smithy/types": "npm:^4.14.1"
     tslib: "npm:^2.6.2"
-  checksum: 10c0/da1bae71757373450d22e3a920b14a901b4846f5f44501246f15764503b3e6332d3b3fb05b6bef64e5150d96886f63aadff1bc6402ef7186096ead9f905b9f38
+  checksum: 10c0/86734591f02a0aeb33f772aaa40f8242a5cf5db0c9b2c61f72cd32aa74cef0dd433f00cb850b1d44169389432d092f4ec7d95e883c498500ce09410684fcf0c6
   languageName: node
   linkType: hard
 
@@ -1570,8 +1570,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tokenizer/s3@workspace:."
   dependencies:
-    "@aws-sdk/client-s3": "npm:^3.1041.0"
-    "@aws-sdk/credential-providers": "npm:^3.1041.0"
+    "@aws-sdk/client-s3": "npm:^3.1044.0"
+    "@aws-sdk/credential-providers": "npm:^3.1044.0"
     "@biomejs/biome": "npm:2.4.14"
     "@tokenizer/range": "npm:^0.13.1"
     "@tokenizer/token": "npm:^0.3.0"
