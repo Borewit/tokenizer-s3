@@ -74,7 +74,7 @@
     "del-cli": "^7.0.0",
     "file-type": "^21.3.4",
     "mocha": "^11.7.5",
-    "music-metadata": "^11.12.3",
+    "music-metadata": "^11.13.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
