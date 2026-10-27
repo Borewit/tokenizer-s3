@@ -42,7 +42,7 @@ describe('S3 Tokenizer', function() {
 
   describe('initialize tokenizer.fileInfo', () => {
 
-    async function checkFileInfo(chunked) {
+    async function checkFileInfo(chunked: boolean) {
 
       const tokenizer = await makeS3TestDataTokenizer(fileKeys.sweetManLineMe, chunked)
 
@@ -65,7 +65,11 @@ describe('S3 Tokenizer', function() {
 
     async function determineFileType(key:string): Promise<FileTypeResult> {
       const tokenizer = await makeS3TestDataTokenizer(key, true);
-      return await fileTypeFromTokenizer(tokenizer);
+      const fileType = await fileTypeFromTokenizer(tokenizer);
+      if (!fileType) {
+        throw new Error(`Unable to determine file type of ${key}`);
+      }
+      return fileType;
     }
 
     it('from 8MB MP3 file', async () => {
@@ -110,7 +114,11 @@ describe('S3 Tokenizer', function() {
       assert.strictEqual(metadata.format.container, 'EBML/matroska', 'fileType.mime');
       assert.strictEqual(metadata.format.codec, 'AC3', 'format.codec');
       assert.strictEqual(metadata.format.sampleRate, 48000, 'metadata.format.sampleRate');
-      assert.approximately(metadata.format.duration, 184.69, 0.01, 'metadata.format.duration');
+      const duration = metadata.format.duration;
+      if (duration === undefined) {
+        throw new Error('metadata.format.duration expected');
+      }
+      assert.approximately(duration, 184.69, 0.01, 'metadata.format.duration');
     });
 
     it('from 2.5 GB Matroska file', async () => {
@@ -120,7 +128,11 @@ describe('S3 Tokenizer', function() {
       assert.strictEqual(metadata.format.container, 'EBML/matroska', 'fileType.mime');
       assert.strictEqual(metadata.format.codec, 'AC3', 'metadata.format.codec');
       assert.strictEqual(metadata.format.sampleRate, 48000, 'metadata.format.sampleRate');
-      assert.approximately(metadata.format.duration, 215.68, 0.01, 'metadata.format.duration');
+      const duration = metadata.format.duration;
+      if (duration === undefined) {
+        throw new Error('metadata.format.duration expected');
+      }
+      assert.approximately(duration, 215.68, 0.01, 'metadata.format.duration');
     });
 
   });
@@ -128,15 +140,19 @@ describe('S3 Tokenizer', function() {
   it('Random-access-read', async () => {
     const tokenizer = await makeS3TestDataTokenizer(fileKeys.solidGround, true);
     try {
+      const fileSize = tokenizer.fileInfo.size;
+      if (fileSize === undefined) {
+        throw new Error('tokenizer.fileInfo.size expected');
+      }
       assert.strictEqual(tokenizer.position, 0);
       assert.isTrue(tokenizer.supportsRandomAccess(), 'Random access file should be enabled');
       const textDecoder = new TextDecoder('utf-8');
       const id3v1HeaderSize = 128;
       const id3v1Header = new Uint8Array(id3v1HeaderSize);
-      await tokenizer.readBuffer(id3v1Header,{position: tokenizer.fileInfo.size - id3v1HeaderSize});
+      await tokenizer.readBuffer(id3v1Header,{position: fileSize - id3v1HeaderSize});
       const id3v1Tag = textDecoder.decode(id3v1Header.subarray(0, 3));
       assert.strictEqual(id3v1Tag, 'TAG');
-      assert.strictEqual(tokenizer.position, tokenizer.fileInfo.size, 'Tokenizer position should be at the end of the file');
+      assert.strictEqual(tokenizer.position, fileSize, 'Tokenizer position should be at the end of the file');
       (tokenizer as IRandomAccessTokenizer).setPosition(0);
       assert.strictEqual(tokenizer.position, 0, 'Tokenizer position should be at the beginning of the file');
 
