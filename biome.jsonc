@@ -1,51 +1,85 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
-	"assist": { "actions": { "source": { "organizeImports": "off" } } },
-	"formatter": {
-		"enabled": false
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"correctness": {
-				"noUnusedImports": "error"
-			},
-			"recommended": true,
-			"complexity": {
-				"noForEach": "off"
-			},
-			"suspicious": {
-				"noEmptyBlockStatements": "error",
-				"useErrorMessage": "error"
-			},
-			"nursery": {},
-			"style": {
-				"useConsistentBuiltinInstantiation": "error",
-				"useThrowNewError": "error",
-				"useThrowOnlyError": "error",
-				"noRestrictedImports": {
-					"level": "error",
-					"options": {
-						"paths": {
-							"node:buffer": "Use Uint8Array instead of Buffer"
-						}
-					}
-				}
-			}
-		}
-	},
-	"files": {
-		"includes": [
-			"**/lib/**/*.ts",
-			"**/test/**/*.ts",
-			"!coverage",
-			"!yarn",
-			"!.pnp.*",
-			"!lib/**/*.d.ts",
-			"!lib/**/*.js",
-			"!test/**/*.d.ts",
-			"!test/**/*.js"
-		],
-		"ignoreUnknown": true
-	}
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "lineEnding": "lf"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "none",
+      "arrowParentheses": "asNeeded",
+      "bracketSpacing": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
+      "complexity": {
+        "noForEach": "off"
+      },
+      "suspicious": {
+        "noEmptyBlockStatements": "error",
+        "useErrorMessage": "error"
+      },
+      "style": {
+        "useAsConstAssertion": "error",
+        "useBlockStatements": "error",
+        "useConsistentArrayType": {
+          "level": "error",
+          "options": {
+            "syntax": "shorthand"
+          }
+        },
+        "useConsistentBuiltinInstantiation": "error",
+        "useConst": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useExportType": "error",
+        "useImportType": "error",
+        "useNodejsImportProtocol": "error",
+        "useNumberNamespace": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "useThrowNewError": "error",
+        "useThrowOnlyError": "error",
+        "noInferrableTypes": "error",
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "node:buffer": "Use Uint8Array instead of Buffer"
+            }
+          }
+        },
+        "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "error"
+      },
+      "preset": "recommended"
+    }
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**/*.json", "**/*.jsonc", "lib/**/*.ts", "test/**/*.ts", "!**/*.d.ts"]
+  }
 }

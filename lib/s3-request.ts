@@ -1,6 +1,6 @@
-import { type IRangeRequestClient, type IRangeRequestResponse, parseContentRange } from '@tokenizer/range';
-import { type GetObjectRequest, GetObjectCommand } from '@aws-sdk/client-s3';
 import { Readable } from 'node:stream';
+import { GetObjectCommand, type GetObjectRequest } from '@aws-sdk/client-s3';
+import { type IRangeRequestClient, type IRangeRequestResponse, parseContentRange } from '@tokenizer/range';
 
 type ByteRangeRequest = [number, number];
 
@@ -18,11 +18,12 @@ export interface S3RequestClient {
  * Use S3-client to execute actual HTTP-requests.
  */
 export class S3Request implements IRangeRequestClient {
-
   private readonly abortController = new AbortController();
 
-  constructor(private s3: S3RequestClient, private objRequest: GetObjectRequest) {
-  }
+  constructor(
+    private s3: S3RequestClient,
+    private objRequest: GetObjectRequest
+  ) {}
 
   /**
    * Concatenate given array of Uint8Arrays
@@ -48,11 +49,10 @@ export class S3Request implements IRangeRequestClient {
       }
       return S3Request.mergeUint8Arrays(...buffers);
     }
-      throw new Error('body expected to be an instance of Readable ');
+    throw new Error('body expected to be an instance of Readable ');
   }
 
   public async getResponse(_method: string | undefined, range: ByteRangeRequest): Promise<IRangeRequestResponse> {
-
     const response = await this.getRangedRequest(range);
     const contentRange = parseContentRange(response.ContentRange as string);
 
@@ -61,7 +61,7 @@ export class S3Request implements IRangeRequestClient {
       mimeType: response.ContentType,
       contentRange,
       acceptPartialRequests: true,
-      arrayBuffer: () => this.buildArrayBuffer(response),
+      arrayBuffer: () => this.buildArrayBuffer(response)
     };
   }
 
@@ -72,9 +72,9 @@ export class S3Request implements IRangeRequestClient {
   public getRangedRequest(range: ByteRangeRequest) {
     const rangedRequest: GetObjectRequest = {
       ...this.objRequest,
-      Range: `bytes=${range[0]}-${range[1]}`,
+      Range: `bytes=${range[0]}-${range[1]}`
     };
-    const command = new GetObjectCommand(rangedRequest)
+    const command = new GetObjectCommand(rangedRequest);
 
     return this.s3.send(command, { abortSignal: this.abortController.signal });
   }
