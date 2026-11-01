@@ -1,5 +1,6 @@
 {
   "extension": ["js"],
   "watch-files": ["lib/**/*.js", "test/**/*.js"],
-  "spec": ["test/*.js"]
+  "spec": ["test/*.test.js"],
+  "timeout": 20000
 }

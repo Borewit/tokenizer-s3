@@ -48,7 +48,42 @@ jobs:
             test/**/*.js
             test/**/*.js.map
 
-  test:
+  unit:
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x, 24.x, 26.x]
+
+    permissions:
+      contents: read
+
+    steps:
+
+      - uses: actions/checkout@v7
+
+      - run: corepack enable yarn
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Download build
+        uses: actions/download-artifact@v8
+        with:
+          name: build
+
+      - name: Run offline unit tests with Node.js ${{ matrix.node-version }}
+        run: yarn run test:unit
+
+  integration:
 
     # AWS credentials are only available to trusted pushes, never to pull requests.
     if: github.event_name == 'push'
@@ -93,5 +128,5 @@ jobs:
         with:
           name: build
 
-      - name: Run compiled tests with Node.js ${{ matrix.node-version }}
-        run: yarn run mocha
+      - name: Run S3 integration tests with Node.js ${{ matrix.node-version }}
+        run: yarn run test:integration
