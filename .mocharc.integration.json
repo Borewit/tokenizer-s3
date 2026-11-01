@@ -1,6 +1,6 @@
 {
   "extension": ["js"],
   "watch-files": ["lib/**/*.js", "test/**/*.js"],
-  "spec": ["test/integration/**/*.js"],
+  "spec": ["test/integration/s3.test.js"],
   "timeout": 20000
 }

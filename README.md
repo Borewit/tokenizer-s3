@@ -106,6 +106,50 @@ It can also be used in a browser environment when bundled with a module bundler.
 
 For TypeScript CommonJs backward compatibility, you can use [load-esm](https://github.com/Borewit/load-esm).
 
+## S3-compatible services
+
+The tokenizer never authenticates and never chooses an endpoint: it only issues ranged `GetObject` requests through the S3 client you pass in.
+Services that expose an S3-compatible API can therefore be used by configuring an AWS SDK v3 client for that provider:
+
+```js
+import { S3Client } from '@aws-sdk/client-s3';
+import { makeChunkedTokenizerFromS3 } from '@tokenizer/s3';
+
+const s3 = new S3Client({
+  region: 'auto', // provider-specific
+  endpoint: 'https://<account-id>.r2.cloudflarestorage.com',
+  forcePathStyle: true,
+  credentials: { accessKeyId: process.env.ACCESS_KEY_ID, secretAccessKey: process.env.SECRET_ACCESS_KEY }
+});
+
+const tokenizer = await makeChunkedTokenizerFromS3(s3, {
+  Bucket: 'media',
+  Key: 'track.mp3'
+});
+```
+
+Cloudflare documents this client configuration for R2 in its [AWS SDK v3 example](https://developers.cloudflare.com/r2/examples/aws/aws-sdk-js-v3/).
+That example shows SDK feasibility; it does not by itself establish this tokenizer's compatibility with a given provider.
+
+Verified against the in-repo HTTP stub and a Docker-hosted [`adobe/s3mock`](https://github.com/adobe/S3Mock) container (pinned to `5.2.3`), not against hosted providers:
+
+| Behaviour | Status |
+| --- | --- |
+| Ranged `GET` returning `206` with `Content-Range` | Required; verified |
+| Full `GET` without `Range` (streaming tokenizer) | Required; verified |
+| `Content-Type` mapped to `fileInfo.mimeType` | Verified |
+| `If-Match`, `If-None-Match` and `VersionId` | Forwarded unchanged from the caller's `GetObjectRequest`; verified |
+| Path-style addressing via `forcePathStyle` | Verified |
+| Virtual-host addressing | Client/DNS dependent; not exercised |
+| Zero-byte objects | Not supported; initialization fails |
+| Endpoints that ignore `Range` | Not supported; initialization fails |
+| Browser/Workers response bodies | Not supported; a Node.js `Readable` body is required |
+
+The Docker-backed suite runs with `yarn run test:integration:s3`, starts and removes its own container, and skips when Docker is unavailable.
+Set `S3_ENDPOINT` to run the same tests against an already running S3-compatible service instead; the tests create and delete their own bucket.
+
+Do not assume universal compatibility: record the provider, client version and addressing style when reporting behaviour on a specific service.
+
 ## Examples
 
 ### Determine S3 file type
