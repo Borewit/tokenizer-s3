@@ -25,3 +25,13 @@ updates:
         dependency-type: "development"
         patterns:
           - "@types/*"
+
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    target-branch: master
+    labels:
+      - DevOps
