@@ -1761,7 +1761,7 @@ __metadata:
     file-type: "npm:^21.3.4"
     mocha: "npm:^11.7.5"
     music-metadata: "npm:^11.12.3"
-    strtok3: "npm:^10.3.5"
+    strtok3: "npm:^10.8.0"
     tsx: "npm:^4.23.15"
     typescript: "npm:^7.0.2"
   peerDependencies:
@@ -3139,12 +3139,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strtok3@npm:^10.3.5":
-  version: 10.3.5
-  resolution: "strtok3@npm:10.3.5"
+"strtok3@npm:^10.8.0":
+  version: 10.8.0
+  resolution: "strtok3@npm:10.8.0"
   dependencies:
     "@tokenizer/token": "npm:^0.3.0"
-  checksum: 10c0/8d2477b239054c9f1f5b14a65d531147ca158ab9887fdc2d0938e77b7ec8891fb683b58254c7643afd5d98a421a59207534d491762b111f58c795071ecbe9fd1
+  checksum: 10c0/a29d06bba72f96208a4ea79e1feb0e4d45d8c1796ae4f108d1d3e8f3453d56cfd4a9fc25e9624fe335b6670ef00dd2e3907121f61030b6145d59f26792e2502a
   languageName: node
   linkType: hard
 
